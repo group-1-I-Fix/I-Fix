@@ -1,14 +1,14 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
+      <Header />
+      <Home />
       <Footer />
-=======
-
->>>>>>> 22ad2f40660989730fd618171dcab22706990585
     </div>
   );
 }

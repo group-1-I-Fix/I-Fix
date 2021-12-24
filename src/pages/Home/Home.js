@@ -1,10 +1,15 @@
 import React from "react";
+import Banner from "../../components/Banner/Banner";
+import Reviews from "../../components/Reviews/Reviews";
+import Services from "../../components/Services.components/Services";
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Banner />
+      <Services />
+      <Reviews />
+    </>
   );
 }
 
