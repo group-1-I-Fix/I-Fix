@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Registration from "./pages/RegistrationPage/Registration";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
+import {Routes, Route} from "react-router-dom"
 
 function App() {
   return (
