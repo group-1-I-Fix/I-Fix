@@ -34,6 +34,7 @@ footer{
 }
 .copyright{
     text-align: center;
+    margin: 0;
     padding-bottom: 1rem;
 }
 @media screen and (max-width: 570px){

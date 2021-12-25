@@ -108,6 +108,7 @@ a {
 }
 .Services-list {
   list-style: none;
+  padding: 0;
 }
 .Services-list li {
   color: #999;

@@ -16,8 +16,8 @@ function Header() {
       const avatarURL = uiavatars.generateAvatar({
         uppercase: true,
 
-        name: `${JSON.parse(localStorage.getItem("loggedUser")).fname} ${
-          JSON.parse(localStorage.getItem("loggedUser")).lname
+        name: `${loggedUser.firstName} ${
+          loggedUser.lastName
         }`,
         background: "64b5f6",
         fontsize: 0.5,
@@ -108,3 +108,6 @@ function Header() {
 }
 
 export default Header;
+
+
+
