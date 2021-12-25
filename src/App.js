@@ -6,6 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import Registration from "./pages/RegistrationPage/Registration";
 import Login from "./components/Regitration Page/LoginForm/LoginForm";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
+import ServicesPage from "./components/ServicesPage/ServicesPage";
+import Services from "./components/Services.components/Services";
+
 // import SwiperServices from "./components/SwiperServices/SwiperServices";
 
 function App() {

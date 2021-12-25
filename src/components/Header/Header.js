@@ -81,7 +81,7 @@ function Header() {
               </ul>
             </>
           ) : (
-            <Link to="/register">Login</Link>
+            <button className="login-btn-header"><Link to="/register">Login</Link></button>
           )}
           <p
             className="burger-menu dropdown-toggle"
