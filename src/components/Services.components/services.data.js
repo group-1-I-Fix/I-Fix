@@ -1,10 +1,10 @@
 const  services = [
     {
         id: 1,
-        title: "Web Development",
+        title: "Mechanical Repair",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-        icon: "fa fa-code",
+        icon: "./assets/mechanic.png",
         list: [
             "Hi",
             "Hello",
@@ -13,10 +13,10 @@ const  services = [
     },
     {
         id: 2,
-        title: "Web Design",
+        title: "Plumbing Repair",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-        icon: "fa fa-paint-brush",
+        icon: "./assets/plumber.png",
         list: [
             "Hi",
             "Hello",
@@ -25,10 +25,10 @@ const  services = [
     },
     {
         id: 3,
-        title: "App Development",
+        title: "Electrical Repair",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-        icon: "fa fa-mobile",
+        icon: "./assets/electrician.png",
         list: [
             "Hi",
             "Hello",
