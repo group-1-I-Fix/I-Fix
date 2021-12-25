@@ -27,7 +27,7 @@ function Header() {
       });
       setUiAvatars(uiavatars);
       setAvatarURL(avatarURL);
-    }
+      }
   });
 
   const goToLogin = () => {
