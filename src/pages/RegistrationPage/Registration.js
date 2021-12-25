@@ -2,8 +2,10 @@ import { useState } from "react";
 import Register from "../../components/Regitration Page/RegisterForm/RegisterForm";
 import Login from "../../components/Regitration Page/LoginForm/LoginForm";
 import "./Registration.css";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Registration = () => {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -43,6 +45,9 @@ const Registration = () => {
 
     if (!localStorage.getItem("users")) {
       localStorage.setItem("users", JSON.stringify(users_data));
+      localStorage.setItem("loggedUser", JSON.stringify(users_data));
+
+      navigate('/')
     } else {
       let data = JSON.parse(localStorage.getItem("users"));
       data.forEach((item) => {
@@ -56,7 +61,8 @@ const Registration = () => {
       if (!flag) {
         data.push(user_data);
         localStorage.setItem("users", JSON.stringify(data));
-        //Router Here >>>>
+        localStorage.setItem("loggedUser", JSON.stringify(data));
+        navigate("/");
       }
     }
     event.target.reset();
@@ -70,9 +76,10 @@ const Registration = () => {
     let all_users_From_Local = JSON.parse(localStorage.getItem("users"));
 
     all_users_From_Local.forEach((acc) => {
-      if (email === acc.email && password === acc.password)
+      if (email === acc.email && password === acc.password){
         localStorage.setItem("loggedUser", JSON.stringify(acc));
-        
+        navigate('/')
+      }
       else if (email === acc.email && password !== acc.password)
         alert("incorrect Password!");
       else alert("Please Create an account!");

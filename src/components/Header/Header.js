@@ -16,9 +16,7 @@ function Header() {
       const avatarURL = uiavatars.generateAvatar({
         uppercase: true,
 
-        name: `${loggedUser.firstName} ${
-          loggedUser.lastName
-        }`,
+        name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "64b5f6",
         fontsize: 0.5,
         bold: true,
@@ -27,7 +25,7 @@ function Header() {
       });
       setUiAvatars(uiavatars);
       setAvatarURL(avatarURL);
-      }
+    }
   });
 
   const goToLogin = () => {
@@ -51,31 +49,40 @@ function Header() {
               state ? "toggled-burger-menu" : ""
             } Navbar-links-list`}
           >
-            <li>Home</li>
-            <li>Services</li>
-            <li>About us</li>
+            <Link to="/">Home</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/about">About us</Link>
           </ul>
         </div>
         <div className="Navbar-right-header">
-          <img
-            className="user-profile dropdown-toggle"
-            id="dropdownMenuButton1"
-            data-bs-toggle="dropdown"
-            src={avatarURL}
-            alt="user profile"
-          />
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li>
-              <a className="dropdown-item" href="#">
-                Profile
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Sign out
-              </a>
-            </li>
-          </ul>
+          { loggedUser ? (
+            <>
+              <img
+                className="user-profile dropdown-toggle"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                src={avatarURL}
+                alt="user profile"
+              />
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <button className="dropdown-item" href="#">
+                    Sign out
+                  </button>
+                </li>
+              </ul>
+            </>
+          ) : (
+            <Link to="/register">Login</Link>
+          )}
           <p
             className="burger-menu dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -108,6 +115,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
