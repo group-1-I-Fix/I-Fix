@@ -18,7 +18,7 @@ function Services() {
           <ul className="Services-list ">
             <li>General Maintenance</li>
             <li>Home Extensions</li>
-            <li>24/24 Support</li>
+            <li>24/7 Support</li>
           </ul>
           <button className="Services-item-purchase">Book Now</button>
         </div>
@@ -31,7 +31,7 @@ function Services() {
           <ul className="Services-list">
             <li>General Maintenance</li>
             <li>Home Extensions</li>
-            <li>24/24 Support</li>
+            <li>24/7 Support</li>
           </ul>
           <button className="Services-item-purchase">Book Now</button>
         </div>
@@ -44,7 +44,7 @@ function Services() {
           <ul className="Services-list">
             <li>General Maintenance</li>
             <li>Home Extensions</li>
-            <li>24/24 Support</li>
+            <li>24/7 Support</li>
           </ul>
           <button className="Services-item-purchase">Book Now</button>
         </div>
