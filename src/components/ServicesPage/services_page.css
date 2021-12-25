@@ -57,6 +57,20 @@
     padding: 0 2em;
 }
 
+.book-btn{
+    background: #6C63FF;
+    color: #fff;
+    padding: 0.4em 1em;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+.book-btn:hover{
+    transition: 0.3s all ease-in-out;
+    background: #000;
+}
+
 @media screen and (max-width: 768px) {
     .card-container .card-service{
         max-width: 80%;

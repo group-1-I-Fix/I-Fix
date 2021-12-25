@@ -32,6 +32,9 @@ const ServicesPage = () => {
                                         <p>
                                             {service.description}
                                         </p>
+                                        <button className="book-btn" type="submit">
+                                            Book Now
+                                        </button>
                                     </div>
                                 </div>
                             </>
