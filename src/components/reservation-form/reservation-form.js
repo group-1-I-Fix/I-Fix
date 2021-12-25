@@ -1,7 +1,10 @@
 import React,{useState} from 'react'
+import services from '../Services.components/services.data'
+import "./reservation-form.css"
 
 function ReservationForm() {
-    const [appointments, setAppointments] = useState(JSON.parse(localStorage.getItem(`${data.title} appointments`)) ? JSON.parse(localStorage.getItem("appointments")) : [] )
+    
+    let [appointments, setAppointments] = useState(JSON.parse(localStorage.getItem(`${services[0].title} appointments`)) ? JSON.parse(localStorage.getItem(`${services[0].title} appointments`)) : [] )
     const [reservation,setReservation] = useState({
         date: "",
         startTime: "",
@@ -13,29 +16,61 @@ function ReservationForm() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(reservation.startTime)
-        console.log(reservation.date)
+        let newStartTime = reservation.startTime.split("");
+        newStartTime.splice(2,1);
+        let newStartTimeString = newStartTime.join("");
+
+        let currentDate = new Date();
+        currentDate.getFullYear()
+        console.log(currentDate.getMonth())
+
+
+
+        let newFinishTime = reservation.finishTime.split("");
+        newFinishTime.splice(2,1);
+        let newFinishTimeString = newFinishTime.join("")
+
+        if(Number(newFinishTimeString) < Number(newStartTimeString)){
+            alert("please change time")
+            return;
+        }
+
+        let flag = false;
+
         let newAppointment = {
             date: reservation.date,
-            startTime: reservation.startTime,
-            finishTime: reservation.finishTime
+            startTime: newStartTimeString,
+            finishTime: newFinishTimeString
         }
-        if(!JSON.parse(localStorage.getItem(`${data.title} appointments`))){
-            localStorage.setItem(`${data.title} appointments`, JSON.stringify(newAppointment))
+
+        let newArray = appointments;
+        newArray.forEach(item => {
+            if(item.date === newAppointment.date){
+                if(Number(newAppointment.finishTime) > Number(item.startTime) && Number(newAppointment.startTime) < Number(item.finishTime)){
+                    alert("you cant")
+                    flag = true
+                }
+            }
+        })
+
+        if(!flag) {
+            newArray.push(newAppointment);
+            localStorage.setItem(`${services[0].title} appointments`,JSON.stringify(newArray));
+            setAppointments(JSON.parse(localStorage.getItem(`${services[0].title} appointments`)))
         }
         
 
     }
 
     return (
-        <div>
+        <div className='reservation-form-container'>
             <form onSubmit={handleSubmit}>
                 <div>
-                <label>Type of Service: {data.title}</label>
+                <label>Type of Service: {services[0].title}</label>
                 </div>
                 <div>
                 <label>Date of Service</label>
-                <input name="date" type="date" value={reservation.date} onChange={handleChange} required />
+                <input name="date" type="date" value={reservation.date} onChange={handleChange} required min="2021-12-27" />
                 </div>
                 <div>
                 <label>Start Time, please choose a time after 9:00 AM</label>
@@ -47,6 +82,13 @@ function ReservationForm() {
                 </div>
                 <button type='submit'>Book</button>
             </form>
+            {/* {appointments.map((item,ind) => <div key={ind}>
+                        <p>{item.date}</p>
+                        <p>{item.finishTime}</p>
+                        <p>{item.startTime}</p>
+                    </div>
+                
+            )} */}
         </div>
     )
 }
