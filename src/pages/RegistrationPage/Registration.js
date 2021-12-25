@@ -72,6 +72,7 @@ const Registration = () => {
     all_users_From_Local.forEach((acc) => {
       if (email === acc.email && password === acc.password)
         localStorage.setItem("loggedUser", JSON.stringify(acc));
+        
       else if (email === acc.email && password !== acc.password)
         alert("incorrect Password!");
       else alert("Please Create an account!");
