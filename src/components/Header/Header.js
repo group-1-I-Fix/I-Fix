@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 function Header() {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [uiavatars, setUiAvatars] = useState("");
   const [avatarURL, setAvatarURL] = useState("");
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
@@ -16,9 +16,7 @@ function Header() {
       const avatarURL = uiavatars.generateAvatar({
         uppercase: true,
 
-        name: `${loggedUser.firstName} ${
-          loggedUser.lastName
-        }`,
+        name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "64b5f6",
         fontsize: 0.5,
         bold: true,
@@ -27,17 +25,17 @@ function Header() {
       });
       setUiAvatars(uiavatars);
       setAvatarURL(avatarURL);
-      }
+    }
   });
-
-  const goToLogin = () => {
-    // to bo continued
-    //navigate('/')
-  };
 
   const toggleMenu = () => {
     setState(!state);
   };
+
+  const signOut = () => {
+      localStorage.removeItem('loggedUser')
+    navigate('/register')
+  }
 
   return (
     <header className="header-Nav">
@@ -51,31 +49,40 @@ function Header() {
               state ? "toggled-burger-menu" : ""
             } Navbar-links-list`}
           >
-            <li>Home</li>
-            <li>Services</li>
-            <li>About us</li>
+            <Link to="/">Home</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/about">About us</Link>
           </ul>
         </div>
         <div className="Navbar-right-header">
-          <img
-            className="user-profile dropdown-toggle"
-            id="dropdownMenuButton1"
-            data-bs-toggle="dropdown"
-            src={avatarURL}
-            alt="user profile"
-          />
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li>
-              <a className="dropdown-item" href="#">
-                Profile
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Sign out
-              </a>
-            </li>
-          </ul>
+          { loggedUser ? (
+            <>
+              <img
+                className="user-profile dropdown-toggle"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                src={avatarURL}
+                alt="user profile"
+              />
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <Link to='/user-profile' className="dropdown-item">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={signOut} className="dropdown-item">
+                    Sign out
+                  </button>
+                </li>
+              </ul>
+            </>
+          ) : (
+            <Link to="/register">Login</Link>
+          )}
           <p
             className="burger-menu dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -86,19 +93,19 @@ function Header() {
           </p>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to='/' className="dropdown-item">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to='/services' className="dropdown-item">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to="/about" className="dropdown-item">
                 About us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -108,6 +115,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
