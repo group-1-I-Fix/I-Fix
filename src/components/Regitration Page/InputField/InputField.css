@@ -1,0 +1,41 @@
+.input-t {
+  padding: 0.7em !important;
+  margin: 0.5em 0 !important;
+  border: none;
+  border-radius: 0.5em !important;
+  background-color: rgba(232, 240, 254, 1);
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  line-height: 1.7;
+}
+
+span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+label,
+h1,
+code,
+span {
+  font-family: cursive;
+}
+
+code {
+  color: red;
+  padding: 0 0 0 0.3em;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
