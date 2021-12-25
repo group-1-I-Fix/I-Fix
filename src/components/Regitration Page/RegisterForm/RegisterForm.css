@@ -3,7 +3,6 @@
   background-color: white;
   padding: 0px 3em;
   border-radius: 0.9em;
-  /* margin: 0 0 2em 0; */
 }
 
 .Register-Title {
@@ -30,13 +29,11 @@
 
 .Register-btn:hover {
   background-color: rgb(55, 44, 67);
-  /* margin: 0 0 2em 0; */
 }
 
 @media all and (min-width: 1160px) {
   .form-register {
     width: 35vw;
-    /* margin: 0 0 2em 0; */
   }
 }
 @media all and (max-width: 1160px) {
@@ -49,6 +46,5 @@
   .form-register {
     width: 90vw;
     padding: 0 1.5em;
-    /* margin: 0 0 2em 0; */
   }
 }
