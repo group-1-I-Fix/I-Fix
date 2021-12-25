@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 function Header() {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [uiavatars, setUiAvatars] = useState("");
   const [avatarURL, setAvatarURL] = useState("");
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
@@ -28,14 +28,14 @@ function Header() {
     }
   });
 
-  const goToLogin = () => {
-    // to bo continued
-    //navigate('/')
-  };
-
   const toggleMenu = () => {
     setState(!state);
   };
+
+  const signOut = () => {
+      localStorage.removeItem('loggedUser')
+    navigate('/register')
+  }
 
   return (
     <header className="header-Nav">
@@ -69,12 +69,12 @@ function Header() {
                 aria-labelledby="dropdownMenuButton1"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link to='/user-profile' className="dropdown-item">
                     Profile
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <button className="dropdown-item" href="#">
+                  <button onClick={signOut} className="dropdown-item">
                     Sign out
                   </button>
                 </li>
@@ -93,19 +93,19 @@ function Header() {
           </p>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to='/' className="dropdown-item">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to='/services' className="dropdown-item">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to="/about" className="dropdown-item">
                 About us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

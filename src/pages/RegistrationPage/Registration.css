@@ -1,9 +1,9 @@
 .holder-froms {
-  background-color: coral;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
+  padding: 5em 0;
 }
 
 @media all and (min-width: 1160px) {
