@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Registration from "./pages/RegistrationPage/Registration";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
 import {Routes, Route} from "react-router-dom"
+import ReservationForm from "./components/reservation-form/reservation-form";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Home /> */}
       {/* <Userprofile /> */}
       {/* <Footer /> */}
-      <Registration />
+      {/* <Registration /> */}
+      <ReservationForm />
     </div>
   );
 }
