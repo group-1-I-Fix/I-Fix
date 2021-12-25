@@ -1,11 +1,26 @@
 import "./App.css";
-import Services from "./components/Services.components/Services";
-import ContactUS from "./components/ContactUS/ContactUS";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import { Route, Routes } from "react-router-dom";
+import Registration from "./pages/RegistrationPage/Registration";
+import Login from "./components/Regitration Page/LoginForm/LoginForm";
+import Userprofile from "./pages/Home/UserProfile/Userprofile";
+// import SwiperServices from "./components/SwiperServices/SwiperServices";
 
 function App() {
   return (
     <div className="App">
-      <ContactUS />
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        {/* <Route exact path="/login" element={<Login />} /> */}
+        <Route exact path="/register" element={<Registration />} />
+        <Route exact path="/user-profile" element={<Userprofile />} />
+      </Routes>
+
+      <Footer />
+      {/*<SwiperServices />*/}
     </div>
   );
 }
