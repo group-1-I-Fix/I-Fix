@@ -2,26 +2,27 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import { Route, Routes } from 'react-router-dom'
-import Registration from './pages/RegistrationPage/Registration'
-import Login from './components/Regitration Page/LoginForm/LoginForm'
+import { Route, Routes } from "react-router-dom";
+import Registration from "./pages/RegistrationPage/Registration";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
+import ServicesPage from "./components/ServicesPage/ServicesPage";
+
 // import SwiperServices from "./components/SwiperServices/SwiperServices";
 
 function App() {
-    return (
-        <div className="App">
-            <Header />
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                {/* <Route exact path="/login" element={<Login />} /> */}
-                <Route exact path="/register" element={<Registration />} />
-                <Route exact path="/user-profile" element={<Userprofile />} />
-            </Routes>
-            <Footer />
-            {/*<SwiperServices />*/}
-        </div>
-    );
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        {/* <Route exact path="/login" element={<Login />} /> */}
+        <Route exact path="/register" element={<Registration />} />
+        <Route exact path="/user-profile" element={<Userprofile />} />
+      </Routes>
+      <Footer />
+      {/*<SwiperServices />*/}
+    </div>
+  );
 }
 
 export default App;

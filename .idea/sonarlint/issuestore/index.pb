@@ -5,8 +5,6 @@ O
 src/components/Banner/Banner.js,3/c/3cffbcc7308bcbd1de323b7531ea0804642b09bc
 O
 src/components/Footer/Footer.js,7/4/74666642fa5562fe777207b5a96d7dadad77ce22
-O
-src/components/Header/Header.js,c/a/caa79197723a9578d728293db3f20893a9c66c89
 F
 src/pages/Home/Home.js,0/4/0458217ab4f8fbb401443a54be191656b479c515
 <
