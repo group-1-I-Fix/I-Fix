@@ -3,6 +3,7 @@ import './userprofile.css'
 
 function Userprofile() {
     let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    let allUsers = JSON.parse(localStorage.getItem('users'))
 
     const [firstNameState, setFirstNameState] = useState(false)
     const [firstName, setFirstName] = useState("hello")
@@ -35,6 +36,8 @@ function Userprofile() {
     const changeFirstNameValue = () => {
         setFirstName(firstNameInput.current.value)
         setFirstNameState(!firstNameState)
+        // loggedUser.firstName
+        // localStorage.setItem('loggedUser',)
     }
 
     const changeLastName = async () => {
@@ -48,7 +51,7 @@ function Userprofile() {
     }
 
     const changeEmail = async () => {
-        setEmailState(!emailState)
+        await setEmailState(!emailState)
         changeFocus(emailInput)
     }
 
@@ -77,7 +80,7 @@ function Userprofile() {
             const avatarURL = uiavatars.generateAvatar({
                 uppercase: true,
 
-                name: `${JSON.parse(localStorage.getItem("loggedUser")).fname} ${JSON.parse(localStorage.getItem("loggedUser")).lname
+                name: `${loggedUser.firstName} ${loggedUser.lastName
                     }`,
                 background: "64b5f6",
                 fontsize: 0.5,
