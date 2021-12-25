@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import Registration from "./pages/RegistrationPage/Registration";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
 import ServicesPage from "./components/ServicesPage/ServicesPage";
+import Services from "./components/Services.components/Services";
 
 // import SwiperServices from "./components/SwiperServices/SwiperServices";
 
@@ -18,6 +19,7 @@ function App() {
         {/* <Route exact path="/login" element={<Login />} /> */}
         <Route exact path="/register" element={<Registration />} />
         <Route exact path="/user-profile" element={<Userprofile />} />
+        <Route exact path="/services" element={<ServicesPage />} />
       </Routes>
       <Footer />
       {/*<SwiperServices />*/}
