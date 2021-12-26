@@ -58,7 +58,7 @@ function ReservationForm({ service }) {
 
     const newTotalPrice =
       ((Number(newFinishTimeString) - Number(newStartTimeString)) / 100) *
-      service.price;
+      service.price.toFixed(2);
 
     let newAppointment = {
       service: service.title,
