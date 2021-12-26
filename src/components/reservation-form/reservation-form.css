@@ -14,7 +14,7 @@
 }
 .bookBtn {
   display: block;
-  width: 8%;
+  width: 100px;
   margin: 1.1rem auto 0.1rem auto;
   padding: 10px 2px;
   border: 1px solid #fff;

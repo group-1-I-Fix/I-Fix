@@ -142,20 +142,31 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }).then((result) => {
       if (result.value) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        let filteredLoggedUser = loggedUser.appointments.filter(data=>data.id !==index)
-            loggedUser.appointments = filteredLoggedUser
-            localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
-            console.log(filteredLoggedUser)
-            let filteredAllUsers = allUsers.filter(element=> element.id !== loggedUser.id)
-            allUsers = filteredAllUsers
-            allUsers.push(loggedUser)
-            localStorage.setItem('users', JSON.stringify(allUsers))
+        let filteredLoggedUser = loggedUser.appointments.filter(
+          (data) => data.id !== index
+        );
+        loggedUser.appointments = filteredLoggedUser;
+        localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+        console.log(filteredLoggedUser);
+        let filteredAllUsers = allUsers.filter(
+          (element) => element.id !== loggedUser.id
+        );
+        allUsers = filteredAllUsers;
+        allUsers.push(loggedUser);
+        localStorage.setItem("users", JSON.stringify(allUsers));
 
-            let localStorageKey = JSON.parse(localStorage.getItem(`${localStorageServiceKey} appointments`))
-            let filteredLocalStorageKey = localStorageKey.filter(data=>data.id !==index)
-            localStorage.setItem(`${localStorageServiceKey} appointments`, JSON.stringify(filteredLocalStorageKey))
+        let localStorageKey = JSON.parse(
+          localStorage.getItem(`${localStorageServiceKey} appointments`)
+        );
+        let filteredLocalStorageKey = localStorageKey.filter(
+          (data) => data.id !== index
+        );
+        localStorage.setItem(
+          `${localStorageServiceKey} appointments`,
+          JSON.stringify(filteredLocalStorageKey)
+        );
 
-            setDeleteItem(allUsers)
+        setDeleteItem(allUsers);
       }
     });
   };
@@ -303,8 +314,10 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </div>
             </div>
           </div>
+
           <Table striped bordered hover className="mt-5">
             <thead>
+              <h2>Reservations</h2>
               <tr>
                 <th>Technician</th>
                 <th>Date</th>
