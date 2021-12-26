@@ -40,7 +40,7 @@ function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
     <header className="header-Nav">
       <nav className="Navbar-header">
         <div className="Logo">
-          <img src="./assets/i-FIXLOGO.png" />
+          <img src="/assets/i-FIXLOGO.png" />
         </div>
         <div className="Navbar-Links-header">
           <ul
