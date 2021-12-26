@@ -23,8 +23,6 @@ _
 .src/components/Services.components/Services.js,3\f\3f3ce1ba8c01b420aa2020ffe1d4c8ad8a715349
 f
 6src/components/Regitration Page/LoginForm/LoginForm.js,0\a\0af7d7f8503ec614d111f0dbf1b6301cb698bf40
-c
-3src/components/reservation-form/reservation-form.js,d\8\d816a73c3182f7a34f54b4e3ca670dacf00734ec
 P
  src/components/Header/header.css,d\a\da8c1bed7635bcb80b5c8e683c564c5968f36000
 Z

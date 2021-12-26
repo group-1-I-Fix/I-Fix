@@ -10,7 +10,6 @@ import Registration from "./pages/RegistrationPage/Registration";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
 import { useState } from "react";
 import OurTeam from "../src/components/OurTeam/OurTeam";
-
 function App() {
   const [uiavatars, setUiAvatars] = useState("");
   const [avatarURL, setAvatarURL] = useState("");
