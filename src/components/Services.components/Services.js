@@ -23,7 +23,11 @@ function Services() {
                                 <span key={list}>{list}</span>
                             ))}
                         </p>
-                        <button className="Services-item-purchase"><Link to={`/services/${service.title}`}>Book Now</Link></button>
+                        <button className="Services-item-purchase">
+                            <Link to={`/services/${service.title}`}>
+                                Book Now
+                            </Link>
+                        </button>
                     </div>
                 ))}
             </div>

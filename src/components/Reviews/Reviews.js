@@ -17,7 +17,7 @@ const testimonial = [
   {
     id: 2,
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Elon_Musk_Royal_Society.jpg/1200px-Elon_Musk_Royal_Society.jpg",
+      "https://m.economictimes.com/thumb/height-450,width-600,imgsize-175942,msid-70390109/elon-musks-boring-co-raises-120-million-in-first-outside-investment.jpg",
     designation: [
       "Elon Musk",
       "CEO-Founder",

@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./userprofile.css";
+import { Table } from "react-bootstrap";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-  // let loggedUserName = JSON.parse(localStorage.getItem('loggedUser')).firstName;
+
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
   const [firstNameState, setFirstNameState] = useState(false);
@@ -21,10 +24,6 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   const [passwordState, setPasswordState] = useState(false);
   const [password, setPassword] = useState(loggedUser.password);
   const passwordInput = useRef();
-
-  // const [confirmPasswordState, setConfirmPasswordState] = useState(false)
-  // const [confirmPassword, setConfirmPassword] = useState(loggedUser.confirmPassword)
-  // const confirmPasswordInput = useRef();
 
   const changeFirstName = async () => {
     await setFirstNameState(!firstNameState);
@@ -71,7 +70,12 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     for (let i = 0; i < allUsers.length; i++) {
       if (loggedUser.email === allUsers[i].email) {
         flag = true;
-        alert("email already registered");
+        Swal.fire({
+          title: "Email already exists",
+          text: "Please enter a different email",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       }
     }
     if (flag === false) {
@@ -82,7 +86,12 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
       localStorage.setItem("users", JSON.stringify(filteredUsers));
       setEmail(emailInput.current.value);
       setEmailState(!emailState);
-      alert("submitted");
+      Swal.fire({
+        title: "Email changed successfully",
+        text: "Please login again",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     }
   };
 
@@ -99,20 +108,6 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     localStorage.setItem("users", JSON.stringify(filteredUsers));
     setPassword(passwordInput.current.value);
     setPasswordState(!passwordState);
-  };
-
-  // const changeConfirmPassword = async () => {
-  //     await setConfirmPasswordState(!confirmPasswordState)
-  //     changeFocus(confirmPasswordInput)
-  // }
-
-  // const changeConfirmPasswordValue = () => {
-  //     setConfirmPassword(confirmPasswordInput.current.value)
-  //     setConfirmPasswordState(!confirmPasswordState)
-  // }
-
-  const capitalizeFirstLetter = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   useEffect(() => {
@@ -276,56 +271,29 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </div>
             </div>
           </div>
-          <div className="test-div">
-            <h2>Reservations</h2>
-            <div className="reserve">
-            <p>Technician</p>
-            <p>Date</p>
-            <p>From</p>
-            <p>To</p>
-            <p>Price</p>
-            </div>
-            {loggedUser.appointments.map((data,index) => {
-              return (
-                <div key={index} className="reserve">
-                  <p>{data.service}</p>
-                  <p>{data.date}</p>
-                  <p>{data.startTime}</p>
-                  <p>{data.finishTime}</p>
-                  <p>{data.totalPrice}</p>
-                </div>
-              );
-            })}
-          </div>
+          <Table striped bordered hover className="mt-5">
+            <thead>
+              <tr>
+                <th>Technician</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loggedUser.appointments.map((booking) => (
+                <tr key={booking.id}>
+                  <td>{booking.service}</td>
+                  <td>{booking.date}</td>
+                  <td>{booking.startTime}</td>
+                  <td>{booking.finishTime}</td>
+                  <td>{booking.totalPrice}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
-
-        {/* <div className="div-container">
-                    <div style={{ display: confirmPasswordState ? 'block' : 'none' }}>
-                        <label>Confirm Password</label>
-                        <input type="password" defaultValue={confirmPassword} ref={confirmPasswordInput} />
-                        {/* TO DO SHOW/ HIDE PASSWORD */}
-        {/* <button onClick={changeConfirmPasswordValue}>Done</button>
-                        <button onClick={changeConfirmPassword}>X </button>
-                    </div>
-
-                    <div style={{ display: confirmPasswordState ? 'none' : 'block' }}>
-                        <label>Confirm Password</label>
-                        <div className="input-field">{confirmPassword}</div>
-                        <button onClick={changeConfirmPassword}>Edit</button>
-                    </div>
-                </div>   */}
-
-        {/* <form id="form" className="form2" >
-                    <div className="form-control2">
-                        <h1>ffffff</h1>
-                    </div>
-                    <div className="likes">
-                        <i id='likesFA' className="fas fa-heart coloring"></i>
-                        <small className='sml'>xx</small>
-                        <div>
-                        </div>
-                    </div>
-                </form> */}
       </div>
     </main>
   );
