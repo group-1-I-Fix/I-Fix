@@ -52,7 +52,7 @@ const Registration = () => {
 
     if (!localStorage.getItem("users")) {
       localStorage.setItem("users", JSON.stringify(users_data));
-      localStorage.setItem("loggedUser", JSON.stringify(users_data));
+      localStorage.setItem("loggedUser", JSON.stringify(user_data));
     } else {
       let data = JSON.parse(localStorage.getItem("users"));
       data.forEach((item) => {

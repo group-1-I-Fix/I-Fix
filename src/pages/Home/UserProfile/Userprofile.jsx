@@ -143,7 +143,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         <div className="double-container">
           <div className="field-container">
             <div className="div-container">
-                <h2>Information</h2>
+              <h2>Information</h2>
               <div
                 className="centering-div"
                 style={{ display: firstNameState ? "block" : "none" }}
@@ -198,7 +198,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </div>
 
               <div
-                 className="centering-div"
+                className="centering-div"
                 style={{ display: lastNameState ? "none" : "block" }}
               >
                 <label>Last name</label>
@@ -217,7 +217,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
                 style={{ display: emailState ? "block" : "none" }}
               >
                 <label>Email</label>
-                <div  className="edit-positioning">
+                <div className="edit-positioning">
                   <input type="text" defaultValue={email} ref={emailInput} />
                   <button className="done-btn" onClick={changeEmailValue}>
                     Done
@@ -279,12 +279,23 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
           <div className="test-div">
             <h2>Reservations</h2>
             <div className="reserve">
-                <p>technician</p>
-                <p>start date</p>
-                <p>end date</p>
-                <p>from hour</p>
-                <p>to hour</p>
+            <p>Technician</p>
+            <p>Date</p>
+            <p>From</p>
+            <p>To</p>
+            <p>Price</p>
             </div>
+            {loggedUser.appointments.map((data) => {
+              return (
+                <div className="reserve">
+                  <p>{data.service}</p>
+                  <p>{data.date}</p>
+                  <p>{data.startTime}</p>
+                  <p>{data.finishTime}</p>
+                  <p>{data.totalPrice}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 

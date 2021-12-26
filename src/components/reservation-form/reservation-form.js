@@ -1,4 +1,5 @@
 import React, { useState , useEffect } from "react";
+import Userprofile from "../../pages/Home/UserProfile/Userprofile";
 import "./reservation-form.css";
 
 function ReservationForm({service}) {
@@ -83,7 +84,7 @@ function ReservationForm({service}) {
         JSON.stringify(newArray)
       );
       const user = JSON.parse(localStorage.getItem("loggedUser"))
-      user[0].appointments.push(newAppointment)
+      user.appointments.push(newAppointment)
       localStorage.setItem("loggedUser" , JSON.stringify(user))
       const allUsers = JSON.parse(localStorage.getItem("users"));
       const filteredAllUsers = allUsers.filter(data => user.id !== data.id)
