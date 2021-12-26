@@ -3,11 +3,13 @@ import Register from "../../components/Regitration Page/RegisterForm/RegisterFor
 import Login from "../../components/Regitration Page/LoginForm/LoginForm";
 import "./Registration.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
 
 const Registration = () => {
-  //   localStorage.setItem("id", JSON.stringify(1));
-        let allUsersArray = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem('users')).length: 0
-//   const [id, setId] = useState(0);
+
+  let allUsersArray = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem('users')).length: 0
+
   const navigate = useNavigate();
   const [values, setValues] = useState({
     firstName: "",
@@ -58,7 +60,11 @@ const Registration = () => {
       data.forEach((item) => {
         if (user_data.email === item.email) {
           flag = true;
-          alert("Email already Registered!");
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Email already exists!",
+          });
           return;
         }
       });
@@ -84,9 +90,13 @@ const Registration = () => {
       if (email === acc.email && password === acc.password) {
         localStorage.setItem("loggedUser", JSON.stringify(acc));
         navigate("/");
-      } else if (email === acc.email && password !== acc.password)
-        alert("incorrect Password!");
-      else alert("Please Create an account!");
+      }  else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Wrong email or password!",
+        });
+      }
     });
     event.target.reset();
   };

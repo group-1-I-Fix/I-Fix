@@ -1,6 +1,8 @@
-import React, { useState , useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import Userprofile from "../../pages/Home/UserProfile/Userprofile";
 import "./reservation-form.css";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
 
 function ReservationForm({service}) {
   const loggedUserNow = JSON.parse(localStorage.getItem("loggedUser"))
@@ -69,20 +71,27 @@ function ReservationForm({service}) {
       finishTime: newFinishTimeString,
       totalPrice: newTotalPrice
     };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let newStartTime = reservation.startTime.split("");
+        newStartTime.splice(2, 1);
+        let newStartTimeString = newStartTime.join("");
 
-    let newArray = appointments;
-    newArray.forEach((item) => {
-      if (item.date === newAppointment.date) {
-        if (
-          Number(newAppointment.finishTime) > Number(item.startTime) &&
-          Number(newAppointment.startTime) < Number(item.finishTime)
-        ) {
-          alert("you cant");
-          // sweet alert this time is already reserved
-          flag = true;
+
+        let newFinishTime = reservation.finishTime.split("");
+        newFinishTime.splice(2, 1);
+        let newFinishTimeString = newFinishTime.join("");
+
+
+        if (Number(newFinishTimeString) < Number(newStartTimeString)) {
+            Swal.fire({
+                title: "Oops...",
+                text: "Please pick a time that is after the start time",
+                icon: "error",
+                confirmButtonText: "OK"
+            })
+            return;
         }
-      }
-    });
 
     if (!flag) {
       newArray.push(newAppointment);
@@ -175,12 +184,7 @@ function ReservationForm({service}) {
         <div>
           <label>Total Price:{reservation.startTime && reservation.finishTime ? (((Number(newFTime) - Number(newSTime)) / 100) *service.price) : 0}</label>
         </div>
-        <button type="submit" className="bookBtn">
-          Book
-        </button>
-      </form>
-    </div>
-  );
+    );
 }
 
 export default ReservationForm;
