@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
 import "./ContactUS.css";
 function ContactUS() {
   const [name, setName] = useState("");
@@ -16,11 +19,31 @@ function ContactUS() {
     setMessage(e.target.value);
   };
   const handleSubmit = (e) => {
-      e.preventDefault();
-      //sweet alert
-    setEmail('')
-    setMessage('')
-    setName('')
+    e.preventDefault();
+    //Save the data to local storage
+    const data = {
+      name: name,
+      email: email,
+      message: message,
+    };
+    localStorage.setItem("contactForm", JSON.stringify(data));
+    //Reset the form
+    setName("");
+    setEmail("");
+    setMessage("");
+    if (name === "" || email === "" || message === "") {
+      Swal.fire({
+        title: "Error!",
+        text: "Please fill all the fields",
+        icon: "error",
+      });
+    } else {
+      Swal.fire({
+        title: "Success!",
+        text: "Your message has been sent",
+        icon: "success",
+      });
+    }
   };
   return (
     <div className="fromContainer">
