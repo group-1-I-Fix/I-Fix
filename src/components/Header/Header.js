@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./header.css";
 
-function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
+function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   const navigate = useNavigate();
-  
+
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
   const [state, setState] = useState(false);
 
@@ -32,15 +32,15 @@ function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
   };
 
   const signOut = () => {
-      localStorage.removeItem('loggedUser')
-    navigate('/register')
-  }
+    localStorage.removeItem("loggedUser");
+    navigate("/register");
+  };
 
   return (
     <header className="header-Nav">
       <nav className="Navbar-header">
         <div className="Logo">
-          <img src="/assets/i-FIXLOGO.png" />
+          <img src="/assets/i-FIXLOGO.png" alt="logo" />
         </div>
         <div className="Navbar-Links-header">
           <ul
@@ -50,11 +50,11 @@ function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
           >
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
-            <Link to="/about">About us</Link>
+            <Link to="/aboutUs">About us</Link>
           </ul>
         </div>
         <div className="Navbar-right-header">
-          { loggedUser ? (
+          {loggedUser ? (
             <>
               <img
                 className="user-profile dropdown-toggle"
@@ -68,7 +68,7 @@ function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
                 aria-labelledby="dropdownMenuButton1"
               >
                 <li>
-                  <Link to='/user-profile' className="dropdown-item">
+                  <Link to="/user-profile" className="dropdown-item">
                     Profile
                   </Link>
                 </li>
@@ -80,7 +80,9 @@ function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
               </ul>
             </>
           ) : (
-            <button className="login-btn-header"><Link to="/register">Login</Link></button>
+            <button className="login-btn-header">
+              <Link to="/register">Login</Link>
+            </button>
           )}
           <p
             className="burger-menu dropdown-toggle"
@@ -92,17 +94,17 @@ function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
           </p>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <Link to='/' className="dropdown-item">
+              <Link to="/" className="dropdown-item">
                 Home
               </Link>
             </li>
             <li>
-              <Link to='/services' className="dropdown-item">
+              <Link to="/services" className="dropdown-item">
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/about" className="dropdown-item">
+              <Link to="/aboutUs" className="dropdown-item">
                 About us
               </Link>
             </li>

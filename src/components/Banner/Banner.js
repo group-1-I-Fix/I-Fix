@@ -1,6 +1,7 @@
 import React from "react";
 import "./banner.css";
 import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <>
