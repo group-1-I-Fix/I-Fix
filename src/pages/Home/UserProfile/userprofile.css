@@ -1,97 +1,163 @@
-.main-cont2 {
-    min-height: 76.5vh;
-  }
-  
-  .container2 {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    width: 80%;
-    max-width: 100%;
-    margin: auto;
-    margin-top: 5em;
-    margin-bottom: 5em;
-  }
-  
-  .header2 {
-    border-bottom: 1px solid #f0f0f0;
-    background-color: #f7f7f7;
-    padding: 20px 40px;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header1 h2 {
-    margin: 0;
-  }
-  
-  .form2 {
-    padding: 30px 40px;
-  }
-  
-  .form-control2 {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
-  }
-  
-  .form2 .log-btn2 {
-    background-color: #1877F2;
-    border: 2px solid #1877F2;
-    border-radius: 4px;
-    color: #fff;
-    display: block;
-    font-family: inherit;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 25%;
-    cursor: pointer;
-    display:none;
-  }
+.container2 {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 80%;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
 
-  .container2 input, .container2 .input-field{
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    font-family: inherit;
-    font-size: 14px;
-    padding: 10px;
-    width: 20%;
-  }
+.margin-the-table {
+    margin:0 1em !important;
+}
 
-  .div-container {
-      margin:1em 2em;
-      /* background-color: blue; */
-  }
-  
-  .form2 .reg-btn2 {
-    background-color: #F32013;
-    border: 2px solid #F32013;
-    border-radius: 4px;
-    color: #fff;
-    display: block;
-    font-family: inherit;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 25%;
-    cursor: pointer;
-    display:none;
-  }
+.header2 {
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.likes {
-    display:flex;
+.header1 h2 {
+  margin: 0;
+}
+.fa-trash-alt {
+  cursor: pointer;
+}
+
+.form2 {
+  padding: 30px 40px;
+}
+
+.double-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.field-container {
+  width: 50%;
+}
+
+.test-div {
+  width: 50%;
+  /* background-color: #1877F2; */
+  padding: 1em 2em;
+}
+
+.reserve {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control2 {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form2 .log-btn2 {
+  background-color: #1877f2;
+  border: 2px solid #1877f2;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 25%;
+  cursor: pointer;
+  display: none;
+}
+
+.container2 input,
+.container2 .input-field {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  /* display: block; */
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 60%;
+}
+
+.div-container {
+  margin: 1em 2em;
+  /* background-color: blue; */
+}
+
+.form2 .reg-btn2 {
+  background-color: #f32013;
+  border: 2px solid #f32013;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 25%;
+  cursor: pointer;
+  display: none;
+}
+
+.edit-positioning {
+  display: flex;
+  width: 100%;
+}
+
+.centering-div {
+  width: 100%;
+  margin: 0;
+}
+
+.edit-btn {
+  padding: 0.5em 2em;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  margin-left: 1em;
+}
+
+.done-btn {
+  padding: 0.5em 2em;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  margin-left: 1em;
+}
+
+@media (max-width: 1073px) {
+  .double-container {
     flex-direction: column;
-}
-
-.likes-color {
-    color:red;
-}
-
-  i {
-      color:#f3f3f3;
-      font-size:2em
   }
+  .test-div {
+    width: 100%;
+  }
+  .field-container {
+    width: 100%;
+  }
+  .container2 input,
+  .container2 .input-field {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1073px) {
+    .edit-positioning {
+        flex-direction: column;
+    }
+    .container2 input,
+    .container2 .input-field {
+        width:100%;
+    }
+    .edit-btn, .done-btn {
+        margin:0.5em 0;
+        width:100%;
+    }
+    
+}

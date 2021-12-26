@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Register from "../../components/Regitration Page/RegisterForm/RegisterForm";
 import Login from "../../components/Regitration Page/LoginForm/LoginForm";
 import "./Registration.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
 
 const Registration = () => {
+
+  let allUsersArray = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem('users')).length: 0
+
   const navigate = useNavigate();
   const [values, setValues] = useState({
     firstName: "",
@@ -13,13 +18,16 @@ const Registration = () => {
     password: "",
     confirmPassword: "",
     registered: false,
+    id: allUsersArray +1
   });
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  let { firstName, lastName, email, password, confirmPassword } = values;
+  let { firstName, lastName, email, password, confirmPassword,id} =
+    values;
+
 
   const users_data = [];
 
@@ -37,6 +45,7 @@ const Registration = () => {
       confirmPassword: confirmPassword,
       registered: true,
       appointments: [],
+      id:id
     };
 
     users_data.push(user_data);
@@ -45,13 +54,17 @@ const Registration = () => {
 
     if (!localStorage.getItem("users")) {
       localStorage.setItem("users", JSON.stringify(users_data));
-      localStorage.setItem("loggedUser", JSON.stringify(users_data));
+      localStorage.setItem("loggedUser", JSON.stringify(user_data));
     } else {
       let data = JSON.parse(localStorage.getItem("users"));
       data.forEach((item) => {
         if (user_data.email === item.email) {
           flag = true;
-          alert("Email already Registered!");
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Email already exists!",
+          });
           return;
         }
       });
@@ -62,7 +75,7 @@ const Registration = () => {
         localStorage.setItem("loggedUser", JSON.stringify(user_data));
       }
     }
-    navigate('/')
+    navigate("/");
     event.target.reset();
   };
 
@@ -77,9 +90,13 @@ const Registration = () => {
       if (email === acc.email && password === acc.password) {
         localStorage.setItem("loggedUser", JSON.stringify(acc));
         navigate("/");
-      } else if (email === acc.email && password !== acc.password)
-        alert("incorrect Password!");
-      else alert("Please Create an account!");
+      }  else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Wrong email or password!",
+        });
+      }
     });
     event.target.reset();
   };

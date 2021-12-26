@@ -4,7 +4,8 @@ const  services = [
         title: "Mechanical Repair",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-        icon: "./assets/mechanic.png",
+        icon: "/assets/mechanic.png",
+        price: 11,
         list: [
             "Hi",
             "Hello",
@@ -16,7 +17,8 @@ const  services = [
         title: "Plumbing Repair",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-        icon: "./assets/plumber.png",
+        icon: "/assets/plumber.png",
+        price: 9,
         list: [
             "Hi",
             "Hello",
@@ -28,7 +30,8 @@ const  services = [
         title: "Electrical Repair",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-        icon: "./assets/electrician.png",
+        icon: "/assets/electrician.png",
+        price: 13,
         list: [
             "Hi",
             "Hello",
