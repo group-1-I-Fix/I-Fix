@@ -9,6 +9,8 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
 
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
+  const [deleteItem, setDeleteItem] = useState(loggedUser.appointments);
+
   const [firstNameState, setFirstNameState] = useState(false);
   const [firstName, setFirstName] = useState(loggedUser.firstName);
   const firstNameInput = useRef();
@@ -128,7 +130,35 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }
   });
 
-  // add " : " after two digits of the startTime from localStorage
+  const handleDeletion = (index, localStorageServiceKey) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        let filteredLoggedUser = loggedUser.appointments.filter(data=>data.id !==index)
+            loggedUser.appointments = filteredLoggedUser
+            localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
+            console.log(filteredLoggedUser)
+            let filteredAllUsers = allUsers.filter(element=> element.id !== loggedUser.id)
+            allUsers = filteredAllUsers
+            allUsers.push(loggedUser)
+            localStorage.setItem('users', JSON.stringify(allUsers))
+
+            let localStorageKey = JSON.parse(localStorage.getItem(`${localStorageServiceKey} appointments`))
+            let filteredLocalStorageKey = localStorageKey.filter(data=>data.id !==index)
+            localStorage.setItem(`${localStorageServiceKey} appointments`, JSON.stringify(filteredLocalStorageKey))
+
+            setDeleteItem(allUsers)
+      }
+    });
+  };
 
   return (
     <main className="main-cont2" id="form">
@@ -281,18 +311,29 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>Total Price</th>
+                <th>Remove</th>
               </tr>
             </thead>
             <tbody>
-              {loggedUser.appointments.map((booking) => (
-                <tr key={booking.id}>
-                  <td>{booking.service}</td>
-                  <td>{booking.date}</td>
-                  <td>{booking.startTime}</td>
-                  <td>{booking.finishTime}</td>
-                  <td>{booking.totalPrice}</td>
-                </tr>
-              ))}
+              {loggedUser.appointments
+                ? loggedUser.appointments.map((booking) => (
+                    <tr key={booking.id}>
+                      <td>{booking.service}</td>
+                      <td>{booking.date}</td>
+                      <td>{booking.startTime}</td>
+                      <td>{booking.finishTime}</td>
+                      <td>{booking.totalPrice}</td>
+                      <td>
+                        <i
+                          class="fas fa-trash-alt"
+                          onClick={() =>
+                            handleDeletion(booking.id, booking.service)
+                          }
+                        ></i>
+                      </td>
+                    </tr>
+                  ))
+                : null}
             </tbody>
           </Table>
         </div>

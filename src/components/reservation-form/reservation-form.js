@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./reservation-form.css";
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import "sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2";
 
 function ReservationForm({ service }) {
+  const loggedUserNow = JSON.parse(localStorage.getItem("loggedUser"));
   let [appointments, setAppointments] = useState(
     JSON.parse(localStorage.getItem(`${service.title} appointments`))
       ? JSON.parse(localStorage.getItem(`${service.title} appointments`))
       : []
   );
   const [reservation, setReservation] = useState({
+    mobile: "",
     date: "",
     startTime: "",
     finishTime: "",
@@ -45,16 +46,18 @@ function ReservationForm({ service }) {
 
     if (Number(newFinishTimeString) < Number(newStartTimeString)) {
       Swal.fire({
+        icon: "error",
         title: "Oops...",
         text: "Please pick a time that is after the start time",
-        icon: "error",
         confirmButtonText: "OK",
-      }).then(r =>
-        r.value && setReservation({
-          date: "",
-          startTime: "",
-          finishTime: "",
-        })
+      }).then(
+        (r) =>
+          r.value &&
+          setReservation({
+            date: "",
+            startTime: "",
+            finishTime: "",
+          })
       );
       return;
     }
@@ -63,9 +66,12 @@ function ReservationForm({ service }) {
 
     const newTotalPrice =
       ((Number(newFinishTimeString) - Number(newStartTimeString)) / 100) *
-      service.price.toFixed(2);
+      service.price;
+    const newId = 1 + new Date();
 
     let newAppointment = {
+      mobileNumber: reservation.mobile,
+      id: newId,
       service: service.title,
       date: reservation.date,
       startTime: newStartTimeString,
@@ -81,16 +87,18 @@ function ReservationForm({ service }) {
           Number(newAppointment.startTime) < Number(item.finishTime)
         ) {
           Swal.fire({
+            icon: "error",
             title: "Oops...",
             text: "Please pick a time that is not already booked",
-            icon: "error",
             confirmButtonText: "OK",
-          }).then(r =>
-            r.value && setReservation({
-              date: "",
-              startTime: "",
-              finishTime: "",
-            })
+          }).then(
+            (r) =>
+              r.value &&
+              setReservation({
+                date: "",
+                startTime: "",
+                finishTime: "",
+              })
           );
           flag = true;
         }
@@ -114,17 +122,11 @@ function ReservationForm({ service }) {
         JSON.parse(localStorage.getItem(`${service.title} appointments`))
       );
       Swal.fire({
+        icon: "success",
         title: "Success!",
         text: "Your appointment has been booked!",
-        icon: "success",
-        confirmButtonText: "OK",
-      }).then(r =>
-        r.value && setReservation({
-          date: "",
-          startTime: "",
-          finishTime: "",
-        })
-      );
+        confirmButtonText: "Explore more!",
+      });
     }
   };
 
@@ -133,6 +135,29 @@ function ReservationForm({ service }) {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Type of Service: {service.title}</label>
+        </div>
+        <div>
+          <label>Full Name</label>
+          <input
+            type="text"
+            value={loggedUserNow.firstName + " " + loggedUserNow.lastName}
+            readOnly
+          />
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="text" value={loggedUserNow.email} readOnly />
+        </div>
+        <div>
+          <label>Mobile Number</label>
+          <input
+            name="mobile"
+            type="tel"
+            value={reservation.mobile}
+            onChange={handleChange}
+            required
+            min="10"
+          />
         </div>
         <div>
           <label>Date of Service</label>
