@@ -3,10 +3,11 @@ import "./userprofile.css";
 import { Table } from "react-bootstrap";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
+import { useNavigate } from "react-router-dom";
 
 function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-
+let navigate = useNavigate()
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
   const [deleteItem, setDeleteItem] = useState(loggedUser.appointments);
@@ -130,7 +131,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }
   });
 
-  const handleLogout = () =>
+  const handleLogout = () => {
     Swal.fire({
       title: "Are you sure?",
       text: "You will be logged out",
@@ -148,9 +149,10 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
           text: "",
           icon: "success",
         });
+    navigate('/register')
       }
     });
-
+  }
 
 
 
