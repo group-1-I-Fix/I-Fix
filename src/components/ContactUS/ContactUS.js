@@ -15,7 +15,13 @@ function ContactUS() {
   const onMessageChange = (e) => {
     setMessage(e.target.value);
   };
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      //sweet alert
+    setEmail('')
+    setMessage('')
+    setName('')
+  };
   return (
     <div className="fromContainer">
       <div className="form-wrap">

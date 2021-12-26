@@ -49,6 +49,7 @@ function ReservationForm({service}) {
 
     if (Number(newFinishTimeString) < Number(newStartTimeString)) {
       alert("please change time");
+      // sweet alert end time is less than start time (please pick time)
       return;
     }
 
@@ -72,6 +73,7 @@ function ReservationForm({service}) {
           Number(newAppointment.startTime) < Number(item.finishTime)
         ) {
           alert("you cant");
+          // sweet alert this time is already reserved
           flag = true;
         }
       }
@@ -93,6 +95,7 @@ function ReservationForm({service}) {
       setAppointments(
         JSON.parse(localStorage.getItem(`${service.title} appointments`))
       );
+      //sweet alert
     }
   };
 
