@@ -160,6 +160,7 @@ function ReservationForm({service}) {
                         {
                             reservation.startTime && reservation.finishTime ? (((Number(newFTime) - Number(newSTime)) / 100) * service.price).toFixed(2) : 0
                         }
+
                     </label>
                 </div>
                 <button type="submit" className="bookBtn">
