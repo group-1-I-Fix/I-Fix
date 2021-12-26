@@ -5,6 +5,7 @@ const  services = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
         icon: "./assets/mechanic.png",
+        price: 11,
         list: [
             "Hi",
             "Hello",
@@ -17,6 +18,7 @@ const  services = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
         icon: "./assets/plumber.png",
+        price: 9,
         list: [
             "Hi",
             "Hello",
@@ -29,6 +31,7 @@ const  services = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.",
         icon: "./assets/electrician.png",
+        price: 13,
         list: [
             "Hi",
             "Hello",

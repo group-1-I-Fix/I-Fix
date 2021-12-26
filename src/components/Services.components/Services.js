@@ -1,6 +1,7 @@
 import React from "react";
 import "./Services.css";
 import services from "./services.data";
+import {Link} from "react-router-dom"
 
 function Services() {
     return (
@@ -12,9 +13,9 @@ function Services() {
             <div className="Services-container">
                 {services.map((service) => (
                     <div className="Services-item tb-effect" key={service.id}>
-                        <span className="Services-item-text">{service.title}</span>
+                        <h2 className="Services-item-text">{service.title}</h2>
                         <div className="pricint-item-perhour">
-                            <h3 className="doller">$9</h3>
+                            <h3 className="doller">${service.price}</h3>
                             <span className="hour"> /Hours</span>
                         </div>
                         <p className="testimonial-list">
@@ -22,7 +23,7 @@ function Services() {
                                 <span key={list}>{list}</span>
                             ))}
                         </p>
-                        <button className="Services-item-purchase">Book Now</button>
+                        <button className="Services-item-purchase"><Link to={`/services/${service.title}`}>Book Now</Link></button>
                     </div>
                 ))}
             </div>

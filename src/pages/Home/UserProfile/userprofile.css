@@ -30,6 +30,27 @@
   .form2 {
     padding: 30px 40px;
   }
+
+  .double-container {
+      display:flex;
+      justify-content: space-between;
+      /* align-items: center; */
+  }
+
+  .field-container {
+      width:50%;
+  }
+
+  .test-div {
+      width:50%;
+      /* background-color: #1877F2; */
+      padding:1em 2em;
+  }
+
+  .reserve {
+      display:flex;
+      justify-content: space-between;
+  }
   
   .form-control2 {
     margin-bottom: 10px;
@@ -55,11 +76,11 @@
   .container2 input, .container2 .input-field{
     border: 2px solid #f0f0f0;
     border-radius: 4px;
-    display: block;
+    /* display: block; */
     font-family: inherit;
     font-size: 14px;
     padding: 10px;
-    width: 20%;
+    width: 60%;
   }
 
   .div-container {
@@ -82,16 +103,41 @@
     display:none;
   }
 
-.likes {
+.edit-positioning {
     display:flex;
-    flex-direction: column;
+    width:100%;
 }
 
-.likes-color {
-    color:red;
+.centering-div {
+    width:100%;
+    margin:0;
 }
 
-  i {
-      color:#f3f3f3;
-      font-size:2em
-  }
+.edit-btn {
+    padding:0.5em 2em;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    margin-left:1em;
+}
+
+.done-btn {
+    padding:0.5em 2em;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    margin-left:1em;
+}
+
+@media (max-width:1000px){
+    .double-container{
+        flex-direction: column;
+    }
+    .test-div {
+        width:100%;
+    }
+    .field-container{
+        width:100%;
+    }
+    .container2 input, .container2 .input-field{
+        width:70%;
+    }
+}

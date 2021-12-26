@@ -1,6 +1,7 @@
 import React from 'react';
 import './services_page.css';
 import servicesData from "../Services.components/services.data";
+import {Link} from "react-router-dom"
 
 const ServicesPage = () => {
     return (
@@ -33,7 +34,7 @@ const ServicesPage = () => {
                                             {service.description}
                                         </p>
                                         <button className="book-btn" type="submit">
-                                            Book Now
+                                            <Link to={`/services/${service.title}`}>Book Now</Link>
                                         </button>
                                     </div>
                                 </div>

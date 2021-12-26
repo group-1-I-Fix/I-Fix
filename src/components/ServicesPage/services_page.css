@@ -66,6 +66,13 @@
     font-size: 1em;
     cursor: pointer;
 }
+.book-btn a{
+    color: #fff;
+    text-decoration: none; 
+}
+.book-btn a:hover{
+    color: #fff;
+}
 .book-btn:hover{
     transition: 0.3s all ease-in-out;
     background: #000;

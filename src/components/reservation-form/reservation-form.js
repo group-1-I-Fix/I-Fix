@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import services from "../Services.components/services.data";
+import React, { useState , useEffect } from "react";
+import Userprofile from "../../pages/Home/UserProfile/Userprofile";
 import "./reservation-form.css";
 
-function ReservationForm() {
+function ReservationForm({service}) {
   let [appointments, setAppointments] = useState(
-    JSON.parse(localStorage.getItem(`${services[0].title} appointments`))
-      ? JSON.parse(localStorage.getItem(`${services[0].title} appointments`))
+    JSON.parse(localStorage.getItem(`${service.title} appointments`))
+      ? JSON.parse(localStorage.getItem(`${service.title} appointments`))
       : []
   );
   const [reservation, setReservation] = useState({
@@ -13,23 +13,39 @@ function ReservationForm() {
     startTime: "",
     finishTime: "",
   });
+  const [newSTime,setNewSTime] = useState("")
+  const [newFTime,setNewFTime] = useState("")
+  
+
+  useEffect(() => {
+    let newStartTime = reservation.startTime.split("");
+    newStartTime.splice(2, 1);
+    let newStartTimeString = newStartTime.join("");
+    setNewSTime(newStartTimeString)
+
+    let newFinishTime = reservation.finishTime.split("");
+    newFinishTime.splice(2, 1);
+    let newFinishTimeString = newFinishTime.join("");
+    setNewFTime(newFinishTimeString)
+  },[reservation.finishTime,reservation.startTime])
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setReservation({ ...reservation, [name]: value });
+
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     let newStartTime = reservation.startTime.split("");
     newStartTime.splice(2, 1);
     let newStartTimeString = newStartTime.join("");
-
-    let currentDate = new Date();
-    currentDate.getFullYear();
-    console.log(currentDate.getMonth());
+    
 
     let newFinishTime = reservation.finishTime.split("");
     newFinishTime.splice(2, 1);
     let newFinishTimeString = newFinishTime.join("");
+  
 
     if (Number(newFinishTimeString) < Number(newStartTimeString)) {
       alert("please change time");
@@ -38,10 +54,14 @@ function ReservationForm() {
 
     let flag = false;
 
+    const newTotalPrice = ((Number(newFinishTimeString) - Number(newStartTimeString)) / 100) * service.price
+
     let newAppointment = {
+      service: service.title,
       date: reservation.date,
       startTime: newStartTimeString,
       finishTime: newFinishTimeString,
+      totalPrice: newTotalPrice
     };
 
     let newArray = appointments;
@@ -60,11 +80,18 @@ function ReservationForm() {
     if (!flag) {
       newArray.push(newAppointment);
       localStorage.setItem(
-        `${services[0].title} appointments`,
+        `${service.title} appointments`,
         JSON.stringify(newArray)
       );
+      const user = JSON.parse(localStorage.getItem("loggedUser"))
+      user.appointments.push(newAppointment)
+      localStorage.setItem("loggedUser" , JSON.stringify(user))
+      const allUsers = JSON.parse(localStorage.getItem("users"));
+      const filteredAllUsers = allUsers.filter(data => user.id !== data.id)
+      filteredAllUsers.push(user);
+      localStorage.setItem("users", JSON.stringify(filteredAllUsers))
       setAppointments(
-        JSON.parse(localStorage.getItem(`${services[0].title} appointments`))
+        JSON.parse(localStorage.getItem(`${service.title} appointments`))
       );
     }
   };
@@ -73,7 +100,7 @@ function ReservationForm() {
     <div className="reservation-form-container">
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Type of Service: {services[0].title}</label>
+          <label>Type of Service: {service.title}</label>
         </div>
         <div>
           <label>Date of Service</label>
@@ -110,17 +137,13 @@ function ReservationForm() {
             required
           />
         </div>
+        <div>
+          <label>Total Price:{reservation.startTime && reservation.finishTime ? (((Number(newFTime) - Number(newSTime)) / 100) *service.price) : 0}</label>
+        </div>
         <button type="submit" className="bookBtn">
           Book
         </button>
       </form>
-      {/* {appointments.map((item,ind) => <div key={ind}>
-                        <p>{item.date}</p>
-                        <p>{item.finishTime}</p>
-                        <p>{item.startTime}</p>
-                    </div>
-                
-            )} */}
     </div>
   );
 }
