@@ -85,6 +85,10 @@ function ReservationForm({service}) {
       const user = JSON.parse(localStorage.getItem("loggedUser"))
       user[0].appointments.push(newAppointment)
       localStorage.setItem("loggedUser" , JSON.stringify(user))
+      const allUsers = JSON.parse(localStorage.getItem("users"));
+      const filteredAllUsers = allUsers.filter(data => user.id !== data.id)
+      filteredAllUsers.push(user);
+      localStorage.setItem("users", JSON.stringify(filteredAllUsers))
       setAppointments(
         JSON.parse(localStorage.getItem(`${service.title} appointments`))
       );
