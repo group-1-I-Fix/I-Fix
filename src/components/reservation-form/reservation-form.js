@@ -3,12 +3,14 @@ import Userprofile from "../../pages/Home/UserProfile/Userprofile";
 import "./reservation-form.css";
 
 function ReservationForm({service}) {
+  const loggedUserNow = JSON.parse(localStorage.getItem("loggedUser"))
   let [appointments, setAppointments] = useState(
     JSON.parse(localStorage.getItem(`${service.title} appointments`))
       ? JSON.parse(localStorage.getItem(`${service.title} appointments`))
       : []
   );
   const [reservation, setReservation] = useState({
+    mobile: "",
     date: "",
     startTime: "",
     finishTime: "",
@@ -55,9 +57,12 @@ function ReservationForm({service}) {
 
     let flag = false;
 
-    const newTotalPrice = ((Number(newFinishTimeString) - Number(newStartTimeString)) / 100) * service.price
+    const newTotalPrice = ((Number(newFinishTimeString) - Number(newStartTimeString)) / 100) * service.price;
+    const newId = 1 + new Date();
 
     let newAppointment = {
+      mobileNumber: reservation.mobile,
+      id: newId,
       service: service.title,
       date: reservation.date,
       startTime: newStartTimeString,
@@ -104,6 +109,33 @@ function ReservationForm({service}) {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Type of Service: {service.title}</label>
+        </div>
+        <div>
+          <label>Full Name</label>
+          <input
+            type="text"
+            value={loggedUserNow.firstName + " " + loggedUserNow.lastName}
+            readOnly
+          />
+        </div>
+        <div>
+          <label>Email</label>
+          <input
+            type="text"
+            value={loggedUserNow.email}
+            readOnly
+          />
+        </div>
+        <div>
+          <label>Mobile Number</label>
+          <input
+            name="mobile"
+            type="tel"
+            value={reservation.mobile}
+            onChange={handleChange}
+            required
+            min="10"
+          />
         </div>
         <div>
           <label>Date of Service</label>
