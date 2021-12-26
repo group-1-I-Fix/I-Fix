@@ -314,10 +314,11 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </div>
             </div>
           </div>
-
-          <Table striped bordered hover className="mt-5">
+<div className="test-div">
+<h2>Reservations</h2>
+          <Table striped bordered hover responsive className="mt-5 margin-the-table ">
             <thead>
-              <h2>Reservations</h2>
+              
               <tr>
                 <th>Technician</th>
                 <th>Date</th>
@@ -349,6 +350,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
                 : null}
             </tbody>
           </Table>
+          </div>
         </div>
       </div>
     </main>

@@ -17,10 +17,10 @@ const ServicesPage = () => {
             </div>
             <div className="card-container">
                 {
-                    servicesData.map(service => {
+                    servicesData.map((service,index) => {
                         return (
                             <>
-                                <div className="card-service">
+                                <div key={index}className="card-service">
                                     <div className="card-service-img">
                                         <img src={service.icon} alt={service.title}/>
                                     </div>

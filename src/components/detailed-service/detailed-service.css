@@ -1,5 +1,6 @@
 .full-card {
   display: flex;
+  margin:5em 0;
 }
 .full-card-img {
   margin: 2rem;
