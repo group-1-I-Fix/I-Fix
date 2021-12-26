@@ -285,9 +285,9 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
             <p>To</p>
             <p>Price</p>
             </div>
-            {loggedUser.appointments.map((data) => {
+            {loggedUser.appointments.map((data,index) => {
               return (
-                <div className="reserve">
+                <div key={index} className="reserve">
                   <p>{data.service}</p>
                   <p>{data.date}</p>
                   <p>{data.startTime}</p>
