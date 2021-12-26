@@ -44,16 +44,20 @@ function ReservationForm({service}) {
     let newStartTime = reservation.startTime.split("");
     newStartTime.splice(2, 1);
     let newStartTimeString = newStartTime.join("");
-    
+
 
     let newFinishTime = reservation.finishTime.split("");
     newFinishTime.splice(2, 1);
     let newFinishTimeString = newFinishTime.join("");
-  
+
 
     if (Number(newFinishTimeString) < Number(newStartTimeString)) {
-      alert("please change time");
-      // sweet alert end time is less than start time (please pick time)
+        Swal.fire({
+            title: "Oops...",
+            text: "Please pick a time that is after the start time",
+            icon: "error",
+            confirmButtonText: "OK"
+        })
       return;
     }
 
@@ -71,47 +75,41 @@ function ReservationForm({service}) {
       finishTime: newFinishTimeString,
       totalPrice: newTotalPrice
     };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let newStartTime = reservation.startTime.split("");
-        newStartTime.splice(2, 1);
-        let newStartTimeString = newStartTime.join("");
 
-
-        let newFinishTime = reservation.finishTime.split("");
-        newFinishTime.splice(2, 1);
-        let newFinishTimeString = newFinishTime.join("");
-
-
-        if (Number(newFinishTimeString) < Number(newStartTimeString)) {
-            Swal.fire({
-                title: "Oops...",
-                text: "Please pick a time that is after the start time",
-                icon: "error",
-                confirmButtonText: "OK"
-            })
-            return;
+    let newArray = appointments;
+    newArray.forEach((item) => {
+      if (item.date === newAppointment.date) {
+        if (
+          Number(newAppointment.finishTime) > Number(item.startTime) &&
+          Number(newAppointment.startTime) < Number(item.finishTime)
+        ) {
+          alert("you cant");
+          // sweet alert this time is already reserved
+          flag = true;
         }
-
+      }
+    });
     if (!flag) {
-      newArray.push(newAppointment);
-      localStorage.setItem(
-        `${service.title} appointments`,
-        JSON.stringify(newArray)
-      );
-      const user = JSON.parse(localStorage.getItem("loggedUser"))
-      user.appointments.push(newAppointment)
-      localStorage.setItem("loggedUser" , JSON.stringify(user))
-      const allUsers = JSON.parse(localStorage.getItem("users"));
-      const filteredAllUsers = allUsers.filter(data => user.id !== data.id)
-      filteredAllUsers.push(user);
-      localStorage.setItem("users", JSON.stringify(filteredAllUsers))
-      setAppointments(
-        JSON.parse(localStorage.getItem(`${service.title} appointments`))
-      );
-      //sweet alert
-    }
-  };
+        newArray.push(newAppointment);
+        localStorage.setItem(
+          `${service.title} appointments`,
+          JSON.stringify(newArray)
+        );
+        const user = JSON.parse(localStorage.getItem("loggedUser"))
+        user.appointments.push(newAppointment)
+        localStorage.setItem("loggedUser" , JSON.stringify(user))
+        const allUsers = JSON.parse(localStorage.getItem("users"));
+        const filteredAllUsers = allUsers.filter(data => user.id !== data.id)
+        filteredAllUsers.push(user);
+        localStorage.setItem("users", JSON.stringify(filteredAllUsers))
+        setAppointments(
+          JSON.parse(localStorage.getItem(`${service.title} appointments`))
+        );
+        //sweet alert
+      }
+    };
+
+
 
   return (
     <div className="reservation-form-container">
@@ -184,7 +182,12 @@ function ReservationForm({service}) {
         <div>
           <label>Total Price:{reservation.startTime && reservation.finishTime ? (((Number(newFTime) - Number(newSTime)) / 100) *service.price) : 0}</label>
         </div>
+        <button type="submit" className="bookBtn">
+          Book
+        </button>
+        </form>
+        </div>
     );
 }
 
-export default ReservationForm;
+export default ReservationForm
