@@ -128,6 +128,8 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }
   });
 
+  // add " : " after two digits of the startTime from localStorage
+
   return (
     <main className="main-cont2" id="form">
       <div className="container2">

@@ -23,3 +23,10 @@ P
  src/components/Banner/banner.css,5\4\54ea55afff6dd7d3b9a57ed218ca746cc172fec1
 _
 /src/components/SwiperServices/SwiperServices.js,a\0\a056380d5d45890cdc500ee6cba96e61e175c5bf
+:
+
+src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
+^
+.src/components/Services.components/Services.js,3\f\3f3ce1ba8c01b420aa2020ffe1d4c8ad8a715349
+f
+6src/components/Regitration Page/LoginForm/LoginForm.js,0\a\0af7d7f8503ec614d111f0dbf1b6301cb698bf40

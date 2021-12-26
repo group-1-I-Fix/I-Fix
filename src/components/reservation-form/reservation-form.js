@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Userprofile from "../../pages/Home/UserProfile/Userprofile";
 import "./reservation-form.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
@@ -50,7 +49,13 @@ function ReservationForm({ service }) {
         text: "Please pick a time that is after the start time",
         icon: "error",
         confirmButtonText: "OK",
-      });
+      }).then(r =>
+        r.value && setReservation({
+          date: "",
+          startTime: "",
+          finishTime: "",
+        })
+      );
       return;
     }
 
@@ -80,7 +85,13 @@ function ReservationForm({ service }) {
             text: "Please pick a time that is not already booked",
             icon: "error",
             confirmButtonText: "OK",
-          });
+          }).then(r =>
+            r.value && setReservation({
+              date: "",
+              startTime: "",
+              finishTime: "",
+            })
+          );
           flag = true;
         }
       }
@@ -107,7 +118,13 @@ function ReservationForm({ service }) {
         text: "Your appointment has been booked!",
         icon: "success",
         confirmButtonText: "OK",
-      });
+      }).then(r =>
+        r.value && setReservation({
+          date: "",
+          startTime: "",
+          finishTime: "",
+        })
+      );
     }
   };
 
