@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./userprofile.css";
 import {Table} from "react-bootstrap";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
+
 function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-  // let loggedUserName = JSON.parse(localStorage.getItem('loggedUser')).firstName;
+
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
   const [firstNameState, setFirstNameState] = useState(false);
@@ -22,9 +25,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   const [password, setPassword] = useState(loggedUser.password);
   const passwordInput = useRef();
 
-  // const [confirmPasswordState, setConfirmPasswordState] = useState(false)
-  // const [confirmPassword, setConfirmPassword] = useState(loggedUser.confirmPassword)
-  // const confirmPasswordInput = useRef();
+
 
   const changeFirstName = async () => {
     await setFirstNameState(!firstNameState);
@@ -71,7 +72,12 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     for (let i = 0; i < allUsers.length; i++) {
       if (loggedUser.email === allUsers[i].email) {
         flag = true;
-        alert("email already registered");
+        Swal.fire({
+          title: "Email already exists",
+          text: "Please enter a different email",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       }
     }
     if (flag === false) {
@@ -82,7 +88,12 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
       localStorage.setItem("users", JSON.stringify(filteredUsers));
       setEmail(emailInput.current.value);
       setEmailState(!emailState);
-      alert("submitted");
+     Swal.fire({
+        title: "Email changed successfully",
+        text: "Please login again",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     }
   };
 
@@ -100,20 +111,6 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     setPassword(passwordInput.current.value);
     setPasswordState(!passwordState);
   };
-
-  // const changeConfirmPassword = async () => {
-  //     await setConfirmPasswordState(!confirmPasswordState)
-  //     changeFocus(confirmPasswordInput)
-  // }
-
-  // const changeConfirmPasswordValue = () => {
-  //     setConfirmPassword(confirmPasswordInput.current.value)
-  //     setConfirmPasswordState(!confirmPasswordState)
-  // }
-
-//   const capitalizeFirstLetter = (str) => {
-//     return str.charAt(0).toUpperCase() + str.slice(1);
-//   };
 
   useEffect(() => {
     if (loggedUser) {
