@@ -25,3 +25,11 @@ f
 6src/components/Regitration Page/LoginForm/LoginForm.js,0\a\0af7d7f8503ec614d111f0dbf1b6301cb698bf40
 c
 3src/components/reservation-form/reservation-form.js,d\8\d816a73c3182f7a34f54b4e3ca670dacf00734ec
+P
+ src/components/Header/header.css,d\a\da8c1bed7635bcb80b5c8e683c564c5968f36000
+Z
+*src/pages/RegistrationPage/Registration.js,c\7\c757d07b353a03e84a923981704019c7bd595862
+Q
+!src/components/Reviews/Reviews.js,6\d\6d4b081a2206022e3ee45e0d34dbe93d26f6d5bf
+O
+src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89

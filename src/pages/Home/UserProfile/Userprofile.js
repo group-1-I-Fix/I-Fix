@@ -3,7 +3,7 @@ import "./userprofile.css";
 import { Table } from "react-bootstrap";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
@@ -344,6 +344,9 @@ let navigate = useNavigate()
           </div>
 <div className="test-div">
 <h2>Reservations</h2>
+  {/* if there is no data don't show table*/
+
+    loggedUser.appointments.length > 0 ? (
           <Table striped bordered hover responsive className="mt-5 margin-the-table ">
             <thead>
               
@@ -367,17 +370,23 @@ let navigate = useNavigate()
                       <td>{booking.totalPrice}</td>
                       <td>
                         <i
-                          class="fas fa-trash-alt"
+                          className="fas fa-trash-alt text-danger"
                           onClick={() =>
                             handleDeletion(booking.id, booking.service)
                           }
-                        ></i>
+                        />
                       </td>
                     </tr>
                   ))
                 : null}
             </tbody>
           </Table>
+        ) : (
+          <div className="no-data-div mt-4">
+            <h3>You don't have any booking yet! </h3>
+            <Link className={'btn btn-primary mt-2'} to="/services">Book Now</Link>
+          </div>
+        )}
           </div>
         </div>
       </div>
