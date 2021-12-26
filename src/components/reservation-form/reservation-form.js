@@ -46,9 +46,9 @@ function ReservationForm({ service }) {
 
     if (Number(newFinishTimeString) < Number(newStartTimeString)) {
       Swal.fire({
+          icon: "error",
         title: "Oops...",
         text: "Please pick a time that is after the start time",
-        icon: "error",
         confirmButtonText: "OK",
       });
       return;
@@ -79,9 +79,9 @@ function ReservationForm({ service }) {
           Number(newAppointment.startTime) < Number(item.finishTime)
         ) {
           Swal.fire({
+              icon: "error",
             title: "Oops...",
             text: "Please pick a time that is not already booked",
-            icon: "error",
             confirmButtonText: "OK",
           });
           flag = true;
@@ -106,9 +106,9 @@ function ReservationForm({ service }) {
         JSON.parse(localStorage.getItem(`${service.title} appointments`))
       );
       Swal.fire({
+          icon: "success",
         title: "Success!",
         text: "Your appointment has been booked!",
-        icon: "success",
         confirmButtonText: "Explore more!",
         //regnoerihgoierg
       });
