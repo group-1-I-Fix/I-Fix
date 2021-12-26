@@ -130,6 +130,30 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }
   });
 
+  const handleLogout = () =>
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+    }).then((result) => {
+      if (result.value) {
+        localStorage.removeItem("loggedUser");
+        Swal.fire({
+          title: "Logged out successfully",
+          text: "",
+          icon: "success",
+        });
+      }
+    });
+
+
+
+
   const handleDeletion = (index, localStorageServiceKey) => {
     Swal.fire({
       title: "Are you sure?",
@@ -169,6 +193,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         setDeleteItem(allUsers);
       }
     });
+
   };
 
   return (
@@ -177,6 +202,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         <div className="header2">
           <h2>Your Profile </h2>
           <img src={avatarURL} alt="user profile" />
+          <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
         </div>
         <div className="double-container">
           <div className="field-container">
