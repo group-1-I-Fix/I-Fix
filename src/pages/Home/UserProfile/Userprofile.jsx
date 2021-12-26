@@ -9,7 +9,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
 
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
-  const [deleteItem,setDeleteItem] = useState(loggedUser.appointments)
+  const [deleteItem, setDeleteItem] = useState(loggedUser.appointments);
 
   const [firstNameState, setFirstNameState] = useState(false);
   const [firstName, setFirstName] = useState(loggedUser.firstName);
@@ -130,22 +130,33 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }
   });
 
-  const handleDeletion = (index,localStorageServiceKey) => {
-    let filteredLoggedUser = loggedUser.appointments.filter(data=>data.id !==index)
-    loggedUser.appointments = filteredLoggedUser
-    localStorage.setItem('loggedUser', JSON.stringify(loggedUser))
-    console.log(filteredLoggedUser)
-    let filteredAllUsers = allUsers.filter(element=> element.id !== loggedUser.id)
-    allUsers = filteredAllUsers
-    allUsers.push(loggedUser)
-    localStorage.setItem('users', JSON.stringify(allUsers))
-    
-    let localStorageKey = JSON.parse(localStorage.getItem(`${localStorageServiceKey} appointments`))
-    let filteredLocalStorageKey = localStorageKey.filter(data=>data.id !==index)
-    localStorage.setItem(`${localStorageServiceKey} appointments`, JSON.stringify(filteredLocalStorageKey))
-    
-    setDeleteItem(allUsers)
-  }
+  const handleDeletion = (index, localStorageServiceKey) => {
+    let filteredLoggedUser = loggedUser.appointments.filter(
+      (data) => data.id !== index
+    );
+    loggedUser.appointments = filteredLoggedUser;
+    localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+    console.log(filteredLoggedUser);
+    let filteredAllUsers = allUsers.filter(
+      (element) => element.id !== loggedUser.id
+    );
+    allUsers = filteredAllUsers;
+    allUsers.push(loggedUser);
+    localStorage.setItem("users", JSON.stringify(allUsers));
+
+    let localStorageKey = JSON.parse(
+      localStorage.getItem(`${localStorageServiceKey} appointments`)
+    );
+    let filteredLocalStorageKey = localStorageKey.filter(
+      (data) => data.id !== index
+    );
+    localStorage.setItem(
+      `${localStorageServiceKey} appointments`,
+      JSON.stringify(filteredLocalStorageKey)
+    );
+
+    setDeleteItem(allUsers);
+  };
 
   return (
     <main className="main-cont2" id="form">
@@ -290,8 +301,10 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </div>
             </div>
           </div>
+
           <Table striped bordered hover className="mt-5">
             <thead>
+              <h2>Reservations</h2>
               <tr>
                 <th>Technician</th>
                 <th>Date</th>
@@ -302,16 +315,25 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </tr>
             </thead>
             <tbody>
-              {loggedUser.appointments?loggedUser.appointments.map((booking) => (
-                <tr key={booking.id}>
-                  <td>{booking.service}</td>
-                  <td>{booking.date}</td>
-                  <td>{booking.startTime}</td>
-                  <td>{booking.finishTime}</td>
-                  <td>{booking.totalPrice}</td>
-                  <td><i class="fas fa-trash-alt" onClick={()=>handleDeletion(booking.id,booking.service)}></i></td>
-                </tr>
-              )) : null}
+              {loggedUser.appointments
+                ? loggedUser.appointments.map((booking) => (
+                    <tr key={booking.id}>
+                      <td>{booking.service}</td>
+                      <td>{booking.date}</td>
+                      <td>{booking.startTime}</td>
+                      <td>{booking.finishTime}</td>
+                      <td>{booking.totalPrice}</td>
+                      <td>
+                        <i
+                          class="fas fa-trash-alt"
+                          onClick={() =>
+                            handleDeletion(booking.id, booking.service)
+                          }
+                        ></i>
+                      </td>
+                    </tr>
+                  ))
+                : null}
             </tbody>
           </Table>
         </div>

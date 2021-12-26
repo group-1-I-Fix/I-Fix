@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 
-
 .pd-y {
   padding: 120px 0;
 }
@@ -126,12 +125,15 @@ a {
   color: #7ba7ff;
   cursor: pointer;
 }
-.Services-item-purchase a{
+.Services-item-purchase a {
   text-decoration: none;
   color: #7ba7ff;
 }
 
 .Services-item:hover .pricint-item-perhour {
+  color: #fff;
+}
+.Services-item:hover .testimonial-list {
   color: #fff;
 }
 

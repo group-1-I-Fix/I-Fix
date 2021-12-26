@@ -18,11 +18,7 @@ function Services() {
               <h3 className="doller">${service.price}</h3>
               <span className="hour"> /Hours</span>
             </div>
-            <p className="testimonial-list">
-              {service.list.map((list) => (
-                <span key={list}>{list}</span>
-              ))}
-            </p>
+            <p className="testimonial-list">{service.description}</p>
             <button className="Services-item-purchase">
               <Link to={`/services/${service.title}`}>Book Now</Link>
             </button>
