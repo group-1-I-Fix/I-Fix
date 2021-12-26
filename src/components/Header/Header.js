@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./header.css";
 
-function Header() {
+function Header({setUiAvatars,setAvatarURL,avatarURL,uiavatars}) {
   const navigate = useNavigate();
-  const [uiavatars, setUiAvatars] = useState("");
-  const [avatarURL, setAvatarURL] = useState("");
+  
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
   const [state, setState] = useState(false);
 
@@ -17,7 +16,7 @@ function Header() {
         uppercase: true,
 
         name: `${loggedUser.firstName} ${loggedUser.lastName}`,
-        background: "64b5f6",
+        background: "f3f3f3",
         fontsize: 0.5,
         bold: true,
         length: 2,

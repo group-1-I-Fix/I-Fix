@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Register from "../../components/Regitration Page/RegisterForm/RegisterForm";
 import Login from "../../components/Regitration Page/LoginForm/LoginForm";
 import "./Registration.css";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Registration = () => {
+  //   localStorage.setItem("id", JSON.stringify(1));
+        let allUsersArray = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem('users')).length: 0
+//   const [id, setId] = useState(0);
   const navigate = useNavigate();
   const [values, setValues] = useState({
     firstName: "",
@@ -13,13 +16,16 @@ const Registration = () => {
     password: "",
     confirmPassword: "",
     registered: false,
+    id: allUsersArray +1
   });
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  let { firstName, lastName, email, password, confirmPassword } = values;
+  let { firstName, lastName, email, password, confirmPassword,id} =
+    values;
+
 
   const users_data = [];
 
@@ -37,6 +43,7 @@ const Registration = () => {
       confirmPassword: confirmPassword,
       registered: true,
       appointments: [],
+      id:id
     };
 
     users_data.push(user_data);
@@ -62,7 +69,7 @@ const Registration = () => {
         localStorage.setItem("loggedUser", JSON.stringify(user_data));
       }
     }
-    navigate('/')
+    navigate("/");
     event.target.reset();
   };
 
