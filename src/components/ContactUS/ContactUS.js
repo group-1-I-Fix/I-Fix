@@ -49,6 +49,7 @@ function ContactUS() {
     <div className="fromContainer">
       <div className="form-wrap">
         <h1>Contact us</h1>
+        <span className="line" />
         <form id="contactForm" onSubmit={handleSubmit}>
           <div className="formGroup">
             <label htmlFor="nameInput">Name</label>

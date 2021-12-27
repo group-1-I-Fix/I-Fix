@@ -1,58 +1,65 @@
-footer{
-    background-color: #f3f3f3;
-}
-.footer-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.footer-container img{
-    width: 100px;
-}
-.footerIcons{
-    margin: 2rem 0;
-}
-.footerIcons i{
-    font-size: 1.3rem;
-    color: black;
-    padding-right: 2rem;
-    transition: 0.5s;
-}
-.footerIcons a:hover i{
-    transform: scale(1.2);
-}
-.footer-contactUs{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-top: 1.5rem;
-    text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Saira:wght@200&display=swap");
 
-.footer-contact-info p{
-    line-height: 3;
+footer {
+  background-color: #df5c79;
+  font-family: "Saira", sans-serif;
 }
-.copyright{
-    text-align: center;
-    margin: 0;
-    padding-bottom: 1rem;
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
 }
-@media screen and (max-width: 570px){
-    .footer-container{
-        font-size: 0.8rem;
-    }
-    .footerIcons i{
-        font-size: 1rem;
-        padding-right: 1rem;
-    }
-    .footer-container img{
-        width: 75px;
-    }
-    .logo-and-icons-container{
-        width: 30%;
-    }
-    .footer-contactUs{
-        align-self: flex-start;
-        margin-top: 3rem;
-    }
+.footer-container img {
+  width: 100px;
+}
+.footerIcons {
+  margin: 2rem 0;
+}
+.footerIcons i {
+  font-size: 1.3rem;
+  color: #fff;
+  padding-right: 2rem;
+  transition: 0.5s;
+}
+.footerIcons a:hover i {
+  transform: scale(1.2);
+}
+.footer-contactUs {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.contatUsTitle {
+  font-family: "Saira", sans-serif;
+}
+.footer-contact-info p {
+  line-height: 3;
+}
+.copyright {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1rem;
+  color: #fff;
+}
+@media screen and (max-width: 570px) {
+  .footer-container {
+    font-size: 0.8rem;
+  }
+  .footerIcons i {
+    font-size: 1rem;
+    padding-right: 1rem;
+  }
+  .footer-container img {
+    width: 75px;
+  }
+  .logo-and-icons-container {
+    width: 30%;
+  }
+  .footer-contactUs {
+    align-self: flex-start;
+    margin-top: 3rem;
+  }
 }
