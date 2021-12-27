@@ -31,3 +31,11 @@ Q
 !src/components/Reviews/Reviews.js,6\d\6d4b081a2206022e3ee45e0d34dbe93d26f6d5bf
 O
 src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89
+]
+-src/components/ServicesPage/services_page.css,2\5\25961c7a7af9547eaab3569b2418885e6205d609
+Y
+)src/pages/Home/UserProfile/Userprofile.js,2\6\26c685f71282594cb8a6c9553b2befd1102eb417
+[
++src/components/ServicesPage/ServicesPage.js,8\d\8d80c6a5e03f9e4cbb586df67585a8e237b31a73
+a
+1src/components/ServicesDetail/services_detail.css,d\1\d17bf657ddec046bde6ed9e1a7415888e2b5e229
