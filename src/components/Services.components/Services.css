@@ -123,17 +123,21 @@ a {
   color: #df5c79;
   cursor: pointer;
 }
+
 .Services-item-purchase a {
   text-decoration: none;
   color: #df5c79;
 }
+
 .Services-item-purchase a:hover {
   text-decoration: none;
   color: #fff;
 }
+
 .Services-item:hover .pricint-item-perhour {
   color: #fff;
 }
+
 .Services-item:hover .testimonial-list {
   color: #fff;
 }

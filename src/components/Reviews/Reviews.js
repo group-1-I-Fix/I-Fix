@@ -9,10 +9,10 @@ function Testimonials() {
         className="carousel slide"
         data-ride="carousel"
       >
-       <div className="section-header">
-        <h2 className="section-title">What Our Customers Say</h2>
-        <span className="line" />
-      </div>
+        <div className="section-header">
+          <h2 className="section-title">What Our Customers Say</h2>
+          <span className="line" />
+        </div>
 
         <div className="carousel-inner">
           <div className="carousel-item active">

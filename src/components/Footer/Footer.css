@@ -4,27 +4,33 @@ footer {
   background-color: #df5c79;
   font-family: "Saira", sans-serif;
 }
+
 .footer-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #fff;
 }
+
 .footer-container img {
   width: 100px;
 }
+
 .footerIcons {
   margin: 2rem 0;
 }
+
 .footerIcons i {
   font-size: 1.3rem;
   color: #fff;
   padding-right: 2rem;
   transition: 0.5s;
 }
+
 .footerIcons a:hover i {
   transform: scale(1.2);
 }
+
 .footer-contactUs {
   display: flex;
   justify-content: space-between;
@@ -32,18 +38,22 @@ footer {
   margin-top: 1.5rem;
   text-align: center;
 }
+
 .contatUsTitle {
   font-family: "Saira", sans-serif;
 }
+
 .footer-contact-info p {
   line-height: 3;
 }
+
 .copyright {
   text-align: center;
   margin: 0;
   padding-bottom: 1rem;
   color: #fff;
 }
+
 @media screen and (max-width: 570px) {
   .footer-container {
     font-size: 0.8rem;

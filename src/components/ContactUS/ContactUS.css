@@ -3,6 +3,7 @@
   margin: 25px auto;
   padding: 1.25rem;
 }
+
 .line {
   display: block;
   height: 5px;
@@ -10,6 +11,7 @@
   width: 80px;
   background-color: #df5c79;
 }
+
 #contactForm {
   background-color: #242649;
   padding: 2rem 1rem 2rem 1rem;
@@ -18,7 +20,6 @@
 
 .form-wrap {
   padding: 15px 20px;
-  /* background-color: #fff; */
   color: #111;
   display: flex;
   flex-direction: column;

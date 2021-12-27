@@ -29,7 +29,7 @@ function DetailedService({ services }) {
         .filter((list) => list.title === title)
         .map((list) => (
           <div key={list.id}>
-              <ReservationForm service={list} />
+            <ReservationForm service={list} />
           </div>
         ))}
     </div>

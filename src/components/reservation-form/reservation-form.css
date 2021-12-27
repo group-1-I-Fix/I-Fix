@@ -1,4 +1,3 @@
-
 .section .section-center {
   display: flex;
   justify-content: center;
@@ -7,15 +6,15 @@
 }
 
 #booking {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-image: url(/public/assets/mechanical.jpg);
   background-size: cover;
   background-position: center;
 }
-.booking-overlay{
+
+.booking-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
-
 
 .booking-cta {
   margin-top: 45px;
@@ -81,17 +80,7 @@
   color: rgba(0, 0, 0, 0.2);
 }
 
-/*.booking-form .form-group:not(.input-not-empty) .form-control:not(:focus) {*/
-/*    color: transparent;*/
-/*}*/
-
-/*.booking-form select.form-control {*/
-/*    -webkit-appearance: none;*/
-/*    -moz-appearance: none;*/
-/*    appearance: none;*/
-/*}*/
-
-.booking-form select.form-control+.select-arrow {
+.booking-form select.form-control + .select-arrow {
   position: absolute;
   right: 0px;
   bottom: 7px;
@@ -104,8 +93,8 @@
   font-size: 14px;
 }
 
-.booking-form select.form-control+.select-arrow:after {
-  content: '\279C';
+.booking-form select.form-control + .select-arrow:after {
+  content: "\279C";
   display: block;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -114,30 +103,13 @@
 .booking-form .form-label {
   color: #000;
   font-weight: 700;
-  /*position: absolute;*/
-  /*top: 20px;*/
-  /*left: 0px;*/
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
-  /*line-height: 24px;*/
-  /*height: 23px;*/
   font-size: 16px;
   pointer-events: none;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
-
-/*.booking-form .form-group .form-control:focus+.form-label {*/
-/*    top: 0px;*/
-/*    color: #2b9328;*/
-/*    font-size: 14px;*/
-/*}*/
-
-/*.booking-form .form-group.input-not-empty .form-label {*/
-/*    top: 0px;*/
-/*    color: #2b9328;*/
-/*    font-size: 14px;*/
-/*}*/
 
 .booking-form .submit-btn {
   color: #fff;
@@ -151,4 +123,3 @@
   width: 100%;
   text-transform: capitalize;
 }
-

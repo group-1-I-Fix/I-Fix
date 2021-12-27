@@ -41,7 +41,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     <header className="header-Nav">
       <nav className="Navbar-header">
         <div className="Logo">
-          <img src="/assets/LOGO.png" />
+          <img src="/assets/LOGO.png" alt="" />
         </div>
         <div className="Navbar-Links-header">
           <ul

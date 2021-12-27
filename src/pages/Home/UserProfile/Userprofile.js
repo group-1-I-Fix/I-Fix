@@ -3,11 +3,11 @@ import "./userprofile.css";
 import { Table } from "react-bootstrap";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import {Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-let navigate = useNavigate()
+  let navigate = useNavigate();
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
   const [deleteItem, setDeleteItem] = useState(loggedUser.appointments);
@@ -150,12 +150,10 @@ let navigate = useNavigate()
           text: "",
           icon: "success",
         });
-    navigate('/register')
+        navigate("/register");
       }
     });
-  }
-
-
+  };
 
   const handleDeletion = (index, localStorageServiceKey) => {
     Swal.fire({
@@ -196,7 +194,6 @@ let navigate = useNavigate()
         setDeleteItem(allUsers);
       }
     });
-
   };
 
   return (
@@ -205,7 +202,9 @@ let navigate = useNavigate()
         <div className="header2">
           <h2>Your Profile </h2>
           <img src={avatarURL} alt="user profile" />
-          <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
+          <button className="btn btn-primary" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
         <div className="double-container">
           <div className="field-container">
@@ -343,51 +342,60 @@ let navigate = useNavigate()
               </div>
             </div>
           </div>
-<div className="test-div">
-<h2>Reservations</h2>
-  {/* if there is no data don't show table*/
+          <div className="test-div">
+            <h2>Reservations</h2>
+            {
+              /* if there is no data don't show table*/
 
-    loggedUser.appointments.length > 0 ? (
-          <Table striped bordered hover responsive className="mt-5 margin-the-table ">
-            <thead>
-              
-              <tr>
-                <th>Technician</th>
-                <th>Date</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Total Price</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              {loggedUser.appointments
-                ? loggedUser.appointments.map((booking) => (
-                    <tr key={booking.id}>
-                      <td>{booking.service}</td>
-                      <td>{booking.date}</td>
-                      <td>{booking.startTime}</td>
-                      <td>{booking.finishTime}</td>
-                      <td>{booking.totalPrice}</td>
-                      <td>
-                        <i
-                          className="fas fa-trash-alt text-danger"
-                          onClick={() =>
-                            handleDeletion(booking.id, booking.service)
-                          }
-                        />
-                      </td>
+              loggedUser.appointments.length > 0 ? (
+                <Table
+                  striped
+                  bordered
+                  hover
+                  responsive
+                  className="mt-5 margin-the-table "
+                >
+                  <thead>
+                    <tr>
+                      <th>Technician</th>
+                      <th>Date</th>
+                      <th>Start Time</th>
+                      <th>End Time</th>
+                      <th>Total Price</th>
+                      <th>Remove</th>
                     </tr>
-                  ))
-                : null}
-            </tbody>
-          </Table>
-        ) : (
-          <div className="no-data-div mt-4">
-            <h3>You don't have any booking yet! </h3>
-            <Link className={'btn btn-primary mt-2'} to="/services">Book Now</Link>
-          </div>
-        )}
+                  </thead>
+                  <tbody>
+                    {loggedUser.appointments
+                      ? loggedUser.appointments.map((booking) => (
+                          <tr key={booking.id}>
+                            <td>{booking.service}</td>
+                            <td>{booking.date}</td>
+                            <td>{booking.startTime}</td>
+                            <td>{booking.finishTime}</td>
+                            <td>{booking.totalPrice}</td>
+                            <td>
+                              <i
+                                className="fas fa-trash-alt text-danger"
+                                onClick={() =>
+                                  handleDeletion(booking.id, booking.service)
+                                }
+                              />
+                            </td>
+                          </tr>
+                        ))
+                      : null}
+                  </tbody>
+                </Table>
+              ) : (
+                <div className="no-data-div mt-4">
+                  <h3>You don't have any booking yet! </h3>
+                  <Link className={"btn btn-primary mt-2"} to="/services">
+                    Book Now
+                  </Link>
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
