@@ -10,6 +10,7 @@ import Registration from "./pages/RegistrationPage/Registration";
 import Userprofile from "./pages/Home/UserProfile/Userprofile";
 import { useState } from "react";
 import OurTeam from "../src/components/OurTeam/OurTeam";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [uiavatars, setUiAvatars] = useState("");
@@ -23,6 +24,7 @@ function App() {
         uiavatars={uiavatars}
         avatarURL={avatarURL}
       />
+      <ScrollToTop />
 
       <Routes>
         <Route exact path="/" element={<Home />} />
