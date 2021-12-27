@@ -71,7 +71,7 @@ const RegisterForm = ({ onSubmit, onChange, ...values }) => {
         ))}
 
         <button className="Register-btn" type="submit">
-          Submit
+          Register
         </button>
       </form>
     </div>

@@ -36,7 +36,7 @@ const LoginForm = ({ onChange, onSubmit, ...values }) => {
           />
         ))}
         <button className="Register-btn" type="submit">
-          Submit
+          Login
         </button>
       </form>
     </div>
