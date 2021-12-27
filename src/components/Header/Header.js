@@ -17,7 +17,8 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
 
         name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "f3f3f3",
-        fontsize: 0.5,
+        fontsize: 0.4,
+        color: "df5c79",
         bold: true,
         length: 2,
         rounded: true,

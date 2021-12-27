@@ -1,15 +1,15 @@
 import React from "react";
 import Banner from "../../components/Banner/Banner";
-import Reviews from "../../components/Reviews/Reviews";
 import Services from "../../components/Services.components/Services";
 import ContactUS from "../../components/ContactUS/ContactUS";
+import Testimonials from "../../components/Reviews/Reviews";
 
 function Home() {
   return (
     <>
       <Banner />
       <Services />
-      <Reviews />
+      <Testimonials />
       <div>
         <ContactUS />
       </div>

@@ -122,6 +122,7 @@ let navigate = useNavigate()
         name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "f3f3f3",
         fontsize: 0.5,
+        color: "df5c79",
         bold: true,
         length: 2,
         rounded: true,
@@ -204,7 +205,7 @@ let navigate = useNavigate()
         <div className="header2">
           <h2>Your Profile </h2>
           <img src={avatarURL} alt="user profile" />
-          <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+          <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
         </div>
         <div className="double-container">
           <div className="field-container">
