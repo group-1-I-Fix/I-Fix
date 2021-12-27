@@ -122,7 +122,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "f3f3f3",
         fontsize: 0.5,
-        color: "df5c79",
+        color: "5a66d7",
         bold: true,
         length: 2,
         rounded: true,

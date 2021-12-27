@@ -16,11 +16,12 @@
 
 .header2 {
   border-bottom: 1px solid #f0f0f0;
-  background-color: #df5c79;
+  background-color: #5a66d7;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
 .header1 h2 {

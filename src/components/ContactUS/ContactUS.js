@@ -66,12 +66,14 @@ function ContactUS() {
               className="formControl"
               value={name}
               onChange={onNameChange}
+              placeholder="Enter your name"
             />
           </div>
           <div className="formGroup">
             <label htmlFor="EmailInput">Email address</label>
             <input
               type="email"
+              placeholder="Enter your email"
               className="formControl"
               value={email}
               onChange={onEmailChange}
@@ -81,6 +83,7 @@ function ContactUS() {
             <label htmlFor="messageInput">Message</label>
             <textarea
               className="formControlText"
+              placeholder="Enter your message"
               value={message}
               onChange={onMessageChange}
             />

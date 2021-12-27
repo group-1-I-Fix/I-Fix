@@ -55,7 +55,7 @@
 }
 
 .Navbar-Links-header a:hover {
-  color: #df5c79;
+  color: #5a66d7;
 }
 
 .Navbar-right-header img {
@@ -63,7 +63,7 @@
 }
 
 .Navbar-right-header img:hover {
-  border: 1px solid #df5c79;
+  border: 2px solid #5a66d7;
   border-radius: 50%;
 }
 
@@ -103,7 +103,7 @@
   margin-left: 1em;
   text-align: center;
   font-size: 1.7em;
-  color: #df5c79;
+  color: #5a66d7;
   margin-bottom: 0;
   display: none;
 }

@@ -40,7 +40,7 @@
   height: 5px;
   margin: 0 auto 70px auto;
   width: 80px;
-  background-color: #df5c79;
+  background-color: #5a66d7;
 }
 
 a {
@@ -76,7 +76,7 @@ a {
 
 .Services-item-text {
   font-size: 35px;
-  color: #df5c79;
+  color: #5a66d7;
   transition: color 0.5s;
   font-family: "Saira", sans-serif;
 }
@@ -87,7 +87,7 @@ a {
   transition: color 0.5s;
   padding: 20px 0;
   margin: 20px auto;
-  border: 2px solid #df5c79;
+  border: 2px solid #5a66d7;
   border-radius: 50%;
 }
 
@@ -117,16 +117,16 @@ a {
   border: 0;
   display: block;
   width: 140px;
-  border: 2px solid #006aff;
+  border: 2px solid #5a66d7;
   padding: 10px;
   margin: 15px auto 0 auto;
-  color: #df5c79;
+  color: #5a66d7;
   cursor: pointer;
 }
 
 .Services-item-purchase a {
   text-decoration: none;
-  color: #df5c79;
+  color: #5a66d7;
 }
 
 .Services-item-purchase a:hover {

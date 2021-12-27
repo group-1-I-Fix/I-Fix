@@ -6,14 +6,20 @@ const OurTeam = () => {
     <>
       <div>
         <div className="ourMission">
-          <h1 className="Ourteam-h">About us</h1>
+          <div className="section-header">
+            <h2 className="section-title">About Us</h2>
+            <span className="line" />
+          </div>
           <p className="mission">
             We’re a housing association, social enterprise and charity with a
             turnover of over JOD430m and one of the Jordan largest providers of
             high quality housing and integrated housing, health and social care.
           </p>
         </div>
-        <h1 className="Ourteam-h">Our Team Members</h1>
+        <div className="section-header">
+          <h2 className="section-title">Our Team Members</h2>
+          <span className="line" />
+        </div>
         <div className="Ourteam-section">
           <div className="person">
             <img

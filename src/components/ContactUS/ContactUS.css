@@ -9,11 +9,13 @@
   height: 5px;
   margin: 0 auto 70px auto;
   width: 80px;
-  background-color: #df5c79;
+  background-color: #5a66d7;
 }
 
 #contactForm {
-  background-color: #242649;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
   padding: 2rem 1rem 2rem 1rem;
   border-radius: 1rem;
 }
@@ -40,7 +42,7 @@
 
 .form-wrap .formGroup label {
   display: block;
-  color: #fff;
+  color: #000000;
 }
 
 .form-wrap .formGroup input {
@@ -66,7 +68,7 @@
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  background-color: #df5c79;
+  background-color: #5a66d7;
   font-size: 1.25rem;
 }
 

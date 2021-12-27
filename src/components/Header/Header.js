@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./header.css";
 
@@ -18,7 +18,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "f3f3f3",
         fontsize: 0.4,
-        color: "df5c79",
+        color: "5A66D7",
         bold: true,
         length: 2,
         rounded: true,
@@ -41,7 +41,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     <header className="header-Nav">
       <nav className="Navbar-header">
         <div className="Logo">
-          <img src="/assets/LOGO.png" alt="" />
+          <img src="/assets/LOGO new.png" alt="" />
         </div>
         <div className="Navbar-Links-header">
           <ul
