@@ -29,5 +29,11 @@ Y
 )src/pages/Home/UserProfile/Userprofile.js,2\6\26c685f71282594cb8a6c9553b2befd1102eb417
 [
 +src/components/ServicesPage/ServicesPage.js,8\d\8d80c6a5e03f9e4cbb586df67585a8e237b31a73
-a
-1src/components/ServicesDetail/services_detail.css,d\1\d17bf657ddec046bde6ed9e1a7415888e2b5e229
+d
+4src/components/detailed-service/detailed-service.css,0\d\0d86e855af17723807adbfc3a081577feac4d853
+]
+-src/components/ServicesPage/services_page.css,2\5\25961c7a7af9547eaab3569b2418885e6205d609
+c
+3src/components/detailed-service/detailed-service.js,0\e\0e695dd4f41f27da496c0f86d38eb91eae9da5ab
+Z
+*src/components/ScrollToTop/ScrollToTop.css,0\6\060cf4238e4e4b662bdac2f1f58697ec68f48757

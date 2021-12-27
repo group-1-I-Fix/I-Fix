@@ -38,8 +38,8 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   };
 
   return (
-    <header className="header-Nav">
-      <nav className="Navbar-header">
+    <header className="header-Nav fixed-top">
+      <nav className="Navbar-header ">
         <div className="Logo">
           <img src="/assets/LOGO new.png" alt="" />
         </div>
