@@ -17,6 +17,20 @@ function Testimonials() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
+                className="d-block w-50 pb-3"
+                src="/assets/Abdelkareem.jpg"
+                alt="First slide"
+            />
+            <i className="fas fa-quote-left "></i>
+            <div className="mt-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio fuga officia alias voluptatibus labore aliquam, maxime
+              delectus, nemo incidunt.
+            </div>
+            <span>Peter Clark </span>
+          </div>
+          <div className="carousel-item ">
+            <img
               className="d-block w-50 pb-3"
               src="/assets/abdullah.jpg"
               alt="First slide"

@@ -9,8 +9,6 @@ F
 src/pages/Home/Home.js,0/4/0458217ab4f8fbb401443a54be191656b479c515
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
-R
-"src/components/Reviews/reviews.css,6/c/6c54375fb99243bda3896918c831089b7c989970
 a
 1src/components/SwiperServices/swiper_services.css,e\e\ee10e7f39af517ef173443d24ecb5da93840ce5f
 c
@@ -23,8 +21,6 @@ f
 6src/components/Regitration Page/LoginForm/LoginForm.js,0\a\0af7d7f8503ec614d111f0dbf1b6301cb698bf40
 Z
 *src/pages/RegistrationPage/Registration.js,c\7\c757d07b353a03e84a923981704019c7bd595862
-Q
-!src/components/Reviews/Reviews.js,6\d\6d4b081a2206022e3ee45e0d34dbe93d26f6d5bf
 [
 +src/components/ServicesPage/ServicesPage.js,8\d\8d80c6a5e03f9e4cbb586df67585a8e237b31a73
 d
