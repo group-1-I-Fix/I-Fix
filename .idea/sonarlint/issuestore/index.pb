@@ -31,7 +31,5 @@ d
 4src/components/reservation-form/reservation-form.css,2\b\2b35e4a2f1b30623c77910c7457b851b93e75a37
 R
 "src/components/Reviews/reviews.css,6\c\6c54375fb99243bda3896918c831089b7c989970
-c
-3src/components/reservation-form/reservation-form.js,d\8\d816a73c3182f7a34f54b4e3ca670dacf00734ec
 O
 src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89

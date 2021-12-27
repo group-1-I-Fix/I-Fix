@@ -169,7 +169,7 @@ function ReservationForm({ service }) {
                             <input
                               className="form-control"
                               type="text"
-                              placeholder="Enter your name"
+                              placeholder="Login to Show your name"
                               value={
                                 loggedUserNow
                                   ? loggedUserNow.firstName +
@@ -187,7 +187,7 @@ function ReservationForm({ service }) {
                             <input
                               className="form-control"
                               type="email"
-                              placeholder="Enter your email"
+                              placeholder="Login to Show your email"
                               value={loggedUserNow ? loggedUserNow.email : ""}
                               readOnly
                             />

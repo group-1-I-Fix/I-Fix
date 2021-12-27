@@ -17,6 +17,7 @@
   z-index: 1;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .Logo {
   width: 30%;
   height: 100%;
@@ -40,7 +41,6 @@
 .selected {
   border-bottom: 2px solid #5a66d7;
 }
-
 
 .Navbar-header {
   width: 100%;
