@@ -3,18 +3,34 @@
   margin: 25px auto;
   padding: 1.25rem;
 }
+.line {
+  display: block;
+  height: 5px;
+  margin: 0 auto 70px auto;
+  width: 80px;
+  background-color: #df5c79;
+}
+#contactForm {
+  background-color: #242649;
+  padding: 2rem 1rem 2rem 1rem;
+  border-radius: 1rem;
+}
 
 .form-wrap {
   padding: 15px 20px;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #111;
   display: flex;
   flex-direction: column;
 }
 
 .form-wrap h1 {
+  font-size: 35px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-family: "Saira", sans-serif;
   text-align: center;
-  font-weight: 600;
+  color: #242649;
 }
 
 .form-wrap .formGroup {
@@ -23,6 +39,7 @@
 
 .form-wrap .formGroup label {
   display: block;
+  color: #fff;
 }
 
 .form-wrap .formGroup input {
@@ -48,12 +65,12 @@
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  background-color: rgb(77, 101, 233);
+  background-color: #df5c79;
   font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 768px) {
   .fromContainer {
-    max-width: 65%;
+    max-width: 90%;
   }
 }

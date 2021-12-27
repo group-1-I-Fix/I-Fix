@@ -15,7 +15,7 @@ function Services() {
           <div className="Services-item tb-effect" key={service.id}>
             <h2 className="Services-item-text">{service.title}</h2>
             <div className="pricint-item-perhour">
-              <h3 className="doller">${service.price}</h3>
+              <img className="doller" src={service.icon} alt={service.title} />
               <span className="hour"> /Hours</span>
             </div>
             <p className="testimonial-list">{service.description}</p>
