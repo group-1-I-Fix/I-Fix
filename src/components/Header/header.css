@@ -91,6 +91,11 @@
   background-color: rgb(77, 1, 77);
 }
 
+.login-btn-header:hover {
+  background-color: #5a66d7;
+  transition: 0.5s ease-out;
+}
+
 .login-btn-header a {
   color: white;
   text-decoration: none;
