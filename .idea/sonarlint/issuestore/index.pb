@@ -15,22 +15,16 @@ a
 1src/components/SwiperServices/swiper_services.css,e\e\ee10e7f39af517ef173443d24ecb5da93840ce5f
 c
 3src/components/Services.components/services.data.js,a\c\ac50d9f77d00108c327cdcf89a72e69ebb568a5d
-P
- src/components/Banner/banner.css,5\4\54ea55afff6dd7d3b9a57ed218ca746cc172fec1
 _
 /src/components/SwiperServices/SwiperServices.js,a\0\a056380d5d45890cdc500ee6cba96e61e175c5bf
 ^
 .src/components/Services.components/Services.js,3\f\3f3ce1ba8c01b420aa2020ffe1d4c8ad8a715349
 f
 6src/components/Regitration Page/LoginForm/LoginForm.js,0\a\0af7d7f8503ec614d111f0dbf1b6301cb698bf40
-P
- src/components/Header/header.css,d\a\da8c1bed7635bcb80b5c8e683c564c5968f36000
 Z
 *src/pages/RegistrationPage/Registration.js,c\7\c757d07b353a03e84a923981704019c7bd595862
 Q
 !src/components/Reviews/Reviews.js,6\d\6d4b081a2206022e3ee45e0d34dbe93d26f6d5bf
-]
--src/components/ServicesPage/services_page.css,2\5\25961c7a7af9547eaab3569b2418885e6205d609
 Y
 )src/pages/Home/UserProfile/Userprofile.js,2\6\26c685f71282594cb8a6c9553b2befd1102eb417
 [
