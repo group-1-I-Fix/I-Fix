@@ -86,12 +86,12 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
             </button>
           )}
           <p
-            className="burger-menu dropdown-toggle"
+            className="burger-menu "
             data-bs-toggle="dropdown"
             id="dropdownMenuButton1"
             onClick={toggleMenu}
           >
-            Menu
+            <i class="fas fa-bars"></i>
           </p>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
