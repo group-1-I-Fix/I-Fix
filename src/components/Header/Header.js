@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
 import "./header.css";
 
 function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
@@ -41,7 +40,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     <header className="header-Nav ">
       <nav className="Navbar-header ">
         <div className="Logo">
-          <img  src="/assets/LOGO new.png" alt="" />
+          <img src="/assets/LOGO new.png" alt="" />
         </div>
         <div className="Navbar-Links-header">
           <ul
@@ -91,7 +90,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
             id="dropdownMenuButton1"
             onClick={toggleMenu}
           >
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           </p>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>

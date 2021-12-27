@@ -25,7 +25,6 @@ function App() {
         avatarURL={avatarURL}
       />
       <ScrollToTop />
-
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/register" element={<Registration />} />
@@ -49,7 +48,6 @@ function App() {
         />
         <Route exact path="/aboutUs" element={<OurTeam />} />
       </Routes>
-
       <Footer />
     </div>
   );
