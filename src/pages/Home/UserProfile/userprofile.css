@@ -164,3 +164,11 @@
     width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+  .header2{
+    padding: 19px 20px;
+  }
+
+
+}

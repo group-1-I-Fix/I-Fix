@@ -25,8 +25,6 @@ Z
 *src/pages/RegistrationPage/Registration.js,c\7\c757d07b353a03e84a923981704019c7bd595862
 Q
 !src/components/Reviews/Reviews.js,6\d\6d4b081a2206022e3ee45e0d34dbe93d26f6d5bf
-Y
-)src/pages/Home/UserProfile/Userprofile.js,2\6\26c685f71282594cb8a6c9553b2befd1102eb417
 [
 +src/components/ServicesPage/ServicesPage.js,8\d\8d80c6a5e03f9e4cbb586df67585a8e237b31a73
 d
@@ -35,5 +33,3 @@ d
 -src/components/ServicesPage/services_page.css,2\5\25961c7a7af9547eaab3569b2418885e6205d609
 c
 3src/components/detailed-service/detailed-service.js,0\e\0e695dd4f41f27da496c0f86d38eb91eae9da5ab
-Z
-*src/components/ScrollToTop/ScrollToTop.css,0\6\060cf4238e4e4b662bdac2f1f58697ec68f48757
