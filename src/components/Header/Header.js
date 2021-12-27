@@ -17,7 +17,8 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
 
         name: `${loggedUser.firstName} ${loggedUser.lastName}`,
         background: "f3f3f3",
-        fontsize: 0.5,
+        fontsize: 0.4,
+        color: "df5c79",
         bold: true,
         length: 2,
         rounded: true,
@@ -40,7 +41,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     <header className="header-Nav">
       <nav className="Navbar-header">
         <div className="Logo">
-          <img src="/assets/i-FIXLOGO.png" alt="logo" />
+          <img src="/assets/LOGO.png" />
         </div>
         <div className="Navbar-Links-header">
           <ul

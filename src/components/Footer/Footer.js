@@ -6,7 +6,7 @@ function Footer() {
     <footer>
       <div className="footer-container">
         <div className="logo-and-icons-container">
-          <img src="/assets/i-FIX LOGO.png" alt="logo" />
+          <img src="/assets/logo black.png" alt="logo" />
           <p className="footer-Paragraph">
             Lorem Ipsum is simply dummy text of the
             <br /> printing and typesetting industry.

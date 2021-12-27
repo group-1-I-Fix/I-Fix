@@ -1,71 +1,90 @@
 import React from "react";
 import "./reviews.css";
-import { Carousel } from "react-bootstrap";
 
-const testimonial = [
-  {
-    id: 1,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
-    designation: [
-      "Mark Zuckerberg",
-      "CEO-Founder",
-      "The Landscaping Professionals were quick, courteous and very helpful",
-    ],
-  },
-  {
-    id: 2,
-    image:
-      "https://m.economictimes.com/thumb/height-450,width-600,imgsize-175942,msid-70390109/elon-musks-boring-co-raises-120-million-in-first-outside-investment.jpg",
-    designation: [
-      "Elon Musk",
-      "CEO-Founder",
-      "The Landscaping Professionals were quick, courteous and very helpful",
-    ],
-  },
-  {
-    id: 3,
-    image:
-      "https://assets.telegraphindia.com/telegraph/2020/Dec/1607925942_bill-gates.jpg",
-    designation: [
-      "Bill Gates",
-      "CEO-Founder",
-      "The Landscaping Professionals were quick, courteous and very helpful",
-    ],
-  },
-];
-
-const Reviews = () => {
+function Testimonials() {
   return (
-    <>
-      <div className="Services pd-y">
-        <div className="section-header">
-          <h2 className="section-title">What Our Customers Say</h2>
-          <span className="line" />
-        </div>
-        <Carousel variant="dark">
-          {testimonial.map((item, index) => {
-            return (
-              <Carousel.Item key={index}>
-                <div className="testimonial-container">
-                  <div className="testimonial-item ">
-                    <div className="testimonial-item-perhour">
-                      <img src={item.image} alt="image1" />
-                    </div>
-                    <p className="testimonial-list">
-                      {item.designation.map((item, index) => {
-                        return <span key={index}>{item}</span>;
-                      })}
-                    </p>
-                  </div>
-                </div>
-              </Carousel.Item>
-            );
-          })}
-        </Carousel>
+    <section className="testimonial-section pb-5" id="testimonials-section">
+      <div
+        id="carouselExampleIndicators"
+        className="carousel slide"
+        data-ride="carousel"
+      >
+       <div className="section-header">
+        <h2 className="section-title">What Our Customers Say</h2>
+        <span className="line" />
       </div>
-    </>
-  );
-};
 
-export default Reviews;
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              className="d-block w-50 pb-3"
+              src="/assets/abdullah.jpg"
+              alt="First slide"
+            />
+            <i className="fas fa-quote-left "></i>
+            <div className="mt-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio fuga officia alias voluptatibus labore aliquam, maxime
+              delectus, nemo incidunt.
+            </div>
+            <span>Peter Clark </span>
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block w-50 pb-3"
+              src="/assets/ghassan.png"
+              alt="Second slide"
+            />
+            <i className="fas fa-quote-left "></i>
+            <div className="mt-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio fuga officia alias voluptatibus labore aliquam, maxime
+              delectus, nemo incidunt
+            </div>
+            <span>Johon Doe </span>
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block w-50 pb-3"
+              src="/assets/Ahmad.jpg"
+              alt="Third slide"
+            />
+            <i className="fas fa-quote-left "></i>
+            <div className="mt-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio fuga officia alias voluptatibus labore aliquam, maxime
+              delectus, nemo incidunt
+            </div>
+            <span>Sara James </span>
+          </div>
+        </div>
+        <a
+          className="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a
+          className="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+  );
+}
+
+export default Testimonials;
