@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Register from "../../components/Regitration Page/RegisterForm/RegisterForm";
 import Login from "../../components/Regitration Page/LoginForm/LoginForm";
 import "./Registration.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 

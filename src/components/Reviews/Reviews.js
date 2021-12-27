@@ -17,9 +17,9 @@ function Testimonials() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-                className="d-block w-50 pb-3"
-                src="/assets/Abdelkareem.jpg"
-                alt="First slide"
+              className="d-block w-50 pb-3"
+              src="/assets/Abdelkareem.jpg"
+              alt="First slide"
             />
             <i className="fas fa-quote-left "></i>
             <div className="mt-3">
