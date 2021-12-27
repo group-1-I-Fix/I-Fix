@@ -37,8 +37,9 @@
   background-color: #ffffff;
 }
 
+
 .selected {
-  border-bottom: #5a66d7 solid 2px !important;
+  border-bottom: 2px solid #5a66d7;
 }
 
 .Navbar-header {
