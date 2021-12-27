@@ -36,7 +36,9 @@
   background-color: #ffffff;
 }
 
-
+.selected{
+  border-bottom: #5a66d7 solid 2px !important;
+}
 
 .Navbar-header {
   width: 100%;
