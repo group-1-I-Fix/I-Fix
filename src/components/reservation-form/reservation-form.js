@@ -274,7 +274,9 @@ function ReservationForm({ service }) {
                         </div>
                       </div>
                       <div className="form-btn">
-                        <button className="submit-btn">Book Now</button>
+                        <button className="submit-btn col-lg-12">
+                          Book Now
+                        </button>
                       </div>
                     </form>
                   </div>

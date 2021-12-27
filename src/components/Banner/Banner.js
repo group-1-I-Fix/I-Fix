@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <>
-      <section id="hero" className="hero d-flex align-items-center">
+      <section id="hero" className="hero d-flex align-items-center py-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 d-flex flex-column justify-content-center">
