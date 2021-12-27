@@ -202,7 +202,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         <div className="header2">
           <h2>Your Profile </h2>
           <img src={avatarURL} alt="user profile" />
-          <button className="btn btn-primary" onClick={handleLogout}>
+          <button className="btn btn-light" onClick={handleLogout}>
             Logout
           </button>
         </div>
