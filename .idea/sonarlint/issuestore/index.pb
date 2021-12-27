@@ -27,3 +27,11 @@ d
 -src/components/ServicesPage/services_page.css,2\5\25961c7a7af9547eaab3569b2418885e6205d609
 c
 3src/components/detailed-service/detailed-service.js,0\e\0e695dd4f41f27da496c0f86d38eb91eae9da5ab
+d
+4src/components/reservation-form/reservation-form.css,2\b\2b35e4a2f1b30623c77910c7457b851b93e75a37
+R
+"src/components/Reviews/reviews.css,6\c\6c54375fb99243bda3896918c831089b7c989970
+c
+3src/components/reservation-form/reservation-form.js,d\8\d816a73c3182f7a34f54b4e3ca670dacf00734ec
+O
+src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89
