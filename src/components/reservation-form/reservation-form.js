@@ -4,28 +4,33 @@ import Swal from "sweetalert2";
 
 function ReservationForm({ service }) {
   const loggedUserNow = JSON.parse(localStorage.getItem("loggedUser"));
+
   let [appointments, setAppointments] = useState(
     JSON.parse(localStorage.getItem(`${service.title} appointments`))
       ? JSON.parse(localStorage.getItem(`${service.title} appointments`))
       : []
   );
+
   const [reservation, setReservation] = useState({
     mobile: "",
     date: "",
     startTime: "",
     finishTime: "",
   });
+
   const [newSTime, setNewSTime] = useState("");
   const [newFTime, setNewFTime] = useState("");
 
   useEffect(() => {
     let newStartTime = reservation.startTime.split("");
     newStartTime.splice(2, 1);
+
     let newStartTimeString = newStartTime.join("");
     setNewSTime(newStartTimeString);
 
     let newFinishTime = reservation.finishTime.split("");
     newFinishTime.splice(2, 1);
+
     let newFinishTimeString = newFinishTime.join("");
     setNewFTime(newFinishTimeString);
   }, [reservation.finishTime, reservation.startTime]);
@@ -34,6 +39,7 @@ function ReservationForm({ service }) {
     const { name, value } = e.target;
     setReservation({ ...reservation, [name]: value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let newStartTime = reservation.startTime.split("");
@@ -46,11 +52,19 @@ function ReservationForm({ service }) {
 
     if (Number(newFinishTimeString) < Number(newStartTimeString)) {
       Swal.fire({
-          icon: "error",
+        icon: "error",
         title: "Oops...",
         text: "Please pick a time that is after the start time",
         confirmButtonText: "OK",
-      });
+      }).then(
+        (r) =>
+          r.value &&
+          setReservation({
+            date: "",
+            startTime: "",
+            finishTime: "",
+          })
+      );
       return;
     }
 
@@ -79,11 +93,19 @@ function ReservationForm({ service }) {
           Number(newAppointment.startTime) < Number(item.finishTime)
         ) {
           Swal.fire({
-              icon: "error",
+            icon: "error",
             title: "Oops...",
             text: "Please pick a time that is not already booked",
             confirmButtonText: "OK",
-          });
+          }).then(
+            (r) =>
+              r.value &&
+              setReservation({
+                date: "",
+                startTime: "",
+                finishTime: "",
+              })
+          );
           flag = true;
         }
       }
@@ -106,11 +128,10 @@ function ReservationForm({ service }) {
         JSON.parse(localStorage.getItem(`${service.title} appointments`))
       );
       Swal.fire({
-          icon: "success",
+        icon: "success",
         title: "Success!",
         text: "Your appointment has been booked!",
         confirmButtonText: "Explore more!",
-        //regnoerihgoierg
       });
     }
   };

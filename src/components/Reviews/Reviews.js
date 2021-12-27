@@ -1,5 +1,4 @@
 import React from "react";
-import Swal from "sweetalert2";
 import "./reviews.css";
 import { Carousel } from "react-bootstrap";
 
@@ -45,17 +44,17 @@ const Reviews = () => {
           <span className="line" />
         </div>
         <Carousel variant="dark">
-          {testimonial.map((item) => {
+          {testimonial.map((item, index) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={index}>
                 <div className="testimonial-container">
                   <div className="testimonial-item ">
                     <div className="testimonial-item-perhour">
                       <img src={item.image} alt="image1" />
                     </div>
                     <p className="testimonial-list">
-                      {item.designation.map((item) => {
-                        return <span>{item}</span>;
+                      {item.designation.map((item, index) => {
+                        return <span key={index}>{item}</span>;
                       })}
                     </p>
                   </div>

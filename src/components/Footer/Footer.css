@@ -48,16 +48,20 @@ footer {
   .footer-container {
     font-size: 0.8rem;
   }
+
   .footerIcons i {
     font-size: 1rem;
     padding-right: 1rem;
   }
+
   .footer-container img {
     width: 75px;
   }
+
   .logo-and-icons-container {
     width: 30%;
   }
+
   .footer-contactUs {
     align-self: flex-start;
     margin-top: 3rem;

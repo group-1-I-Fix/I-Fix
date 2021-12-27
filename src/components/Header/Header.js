@@ -50,7 +50,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
           >
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
-            <Link to="/about">About us</Link>
+            <Link to="/aboutUs">About us</Link>
           </ul>
         </div>
         <div className="Navbar-right-header">
@@ -104,7 +104,7 @@ function Header({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </Link>
             </li>
             <li>
-              <Link to="/about" className="dropdown-item">
+              <Link to="/aboutUs" className="dropdown-item">
                 About us
               </Link>
             </li>

@@ -3,10 +3,11 @@ import "./userprofile.css";
 import { Table } from "react-bootstrap";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
+import { useNavigate } from "react-router-dom";
 
 function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-
+let navigate = useNavigate()
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
   const [deleteItem, setDeleteItem] = useState(loggedUser.appointments);
@@ -130,32 +131,71 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
     }
   });
 
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+    }).then((result) => {
+      if (result.value) {
+        localStorage.removeItem("loggedUser");
+        Swal.fire({
+          title: "Logged out successfully",
+          text: "",
+          icon: "success",
+        });
+    navigate('/register')
+      }
+    });
+  }
+
+
+
   const handleDeletion = (index, localStorageServiceKey) => {
-    let filteredLoggedUser = loggedUser.appointments.filter(
-      (data) => data.id !== index
-    );
-    loggedUser.appointments = filteredLoggedUser;
-    localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
-    console.log(filteredLoggedUser);
-    let filteredAllUsers = allUsers.filter(
-      (element) => element.id !== loggedUser.id
-    );
-    allUsers = filteredAllUsers;
-    allUsers.push(loggedUser);
-    localStorage.setItem("users", JSON.stringify(allUsers));
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        let filteredLoggedUser = loggedUser.appointments.filter(
+          (data) => data.id !== index
+        );
+        loggedUser.appointments = filteredLoggedUser;
+        localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+        console.log(filteredLoggedUser);
+        let filteredAllUsers = allUsers.filter(
+          (element) => element.id !== loggedUser.id
+        );
+        allUsers = filteredAllUsers;
+        allUsers.push(loggedUser);
+        localStorage.setItem("users", JSON.stringify(allUsers));
 
-    let localStorageKey = JSON.parse(
-      localStorage.getItem(`${localStorageServiceKey} appointments`)
-    );
-    let filteredLocalStorageKey = localStorageKey.filter(
-      (data) => data.id !== index
-    );
-    localStorage.setItem(
-      `${localStorageServiceKey} appointments`,
-      JSON.stringify(filteredLocalStorageKey)
-    );
+        let localStorageKey = JSON.parse(
+          localStorage.getItem(`${localStorageServiceKey} appointments`)
+        );
+        let filteredLocalStorageKey = localStorageKey.filter(
+          (data) => data.id !== index
+        );
+        localStorage.setItem(
+          `${localStorageServiceKey} appointments`,
+          JSON.stringify(filteredLocalStorageKey)
+        );
 
-    setDeleteItem(allUsers);
+        setDeleteItem(allUsers);
+      }
+    });
+
   };
 
   return (
@@ -164,6 +204,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
         <div className="header2">
           <h2>Your Profile </h2>
           <img src={avatarURL} alt="user profile" />
+          <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
         </div>
         <div className="double-container">
           <div className="field-container">
@@ -301,10 +342,11 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
               </div>
             </div>
           </div>
-
-          <Table striped bordered hover className="mt-5">
+<div className="test-div">
+<h2>Reservations</h2>
+          <Table striped bordered hover responsive className="mt-5 margin-the-table ">
             <thead>
-              <h2>Reservations</h2>
+              
               <tr>
                 <th>Technician</th>
                 <th>Date</th>
@@ -336,6 +378,7 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
                 : null}
             </tbody>
           </Table>
+          </div>
         </div>
       </div>
     </main>

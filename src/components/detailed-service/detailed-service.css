@@ -1,12 +1,16 @@
 .full-card {
   display: flex;
+  margin: 5em 0;
 }
+
 .full-card-img {
   margin: 2rem;
 }
+
 .full-card-img img {
   width: 85%;
 }
+
 .full-card-btn {
   display: block;
   width: 6.25rem;
@@ -19,11 +23,13 @@
   background-color: rgb(77, 101, 233);
   font-size: 1.25rem;
 }
+
 .full-card-det .full-card-title {
   text-align: center;
   font-weight: 600;
   margin-top: 2rem;
 }
+
 .full-card-det .line {
   display: block;
   height: 0.125rem;
@@ -31,30 +37,34 @@
   width: 4.5375rem;
   background-color: #6195ff;
 }
+
 .full-card-det .full-card-description {
   text-align: center;
   font-size: 1.125rem;
   margin-right: 0.5rem;
 }
+
 .full-card-det .full-card-price {
   text-align: center;
   font-size: 1.56rem;
   margin-top: 1rem;
 }
+
 .full-card-det .full-card-price-container {
   width: 8.125rem;
   height: 8.125rem;
-
   padding: 1.25rem 0;
   margin: 1.25rem auto;
   border: 0.25rem solid #6195ff;
   border-radius: 50%;
 }
+
 @media only screen and (max-width: 768px) {
   .full-card {
     display: flex;
     flex-direction: column;
   }
+
   .full-card-img img {
     width: 40%;
   }

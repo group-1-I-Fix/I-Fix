@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Saira:wght@200&display=swap");
 .section-header {
   text-align: center;
@@ -9,7 +8,6 @@
 .section-header .section-title {
   font-size: 35px;
   text-transform: capitalize;
-
   margin-bottom: 10px;
 }
 
@@ -32,7 +30,6 @@
 
 .testimonial-item {
   display: flex;
-  /*width: 30%;*/
   flex-direction: column;
   padding: 40px 15px;
   border: 1px solid #e8e8e8;

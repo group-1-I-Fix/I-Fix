@@ -13,13 +13,15 @@ R
 "src/components/Reviews/reviews.css,6/c/6c54375fb99243bda3896918c831089b7c989970
 a
 1src/components/SwiperServices/swiper_services.css,e\e\ee10e7f39af517ef173443d24ecb5da93840ce5f
-O
-src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89
-P
- src/components/Header/header.css,d\a\da8c1bed7635bcb80b5c8e683c564c5968f36000
 c
 3src/components/Services.components/services.data.js,a\c\ac50d9f77d00108c327cdcf89a72e69ebb568a5d
 P
  src/components/Banner/banner.css,5\4\54ea55afff6dd7d3b9a57ed218ca746cc172fec1
 _
 /src/components/SwiperServices/SwiperServices.js,a\0\a056380d5d45890cdc500ee6cba96e61e175c5bf
+^
+.src/components/Services.components/Services.js,3\f\3f3ce1ba8c01b420aa2020ffe1d4c8ad8a715349
+f
+6src/components/Regitration Page/LoginForm/LoginForm.js,0\a\0af7d7f8503ec614d111f0dbf1b6301cb698bf40
+c
+3src/components/reservation-form/reservation-form.js,d\8\d816a73c3182f7a34f54b4e3ca670dacf00734ec

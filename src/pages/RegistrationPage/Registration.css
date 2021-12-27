@@ -1,6 +1,4 @@
 .holder-froms {
-  /* background-color: coral; */
-
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -10,7 +8,6 @@
 
 @media all and (min-width: 1160px) {
   .holder-froms {
-    /* height: 100vh; */
     flex-direction: row;
     justify-content: space-around;
   }
