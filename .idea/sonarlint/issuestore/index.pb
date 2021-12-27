@@ -13,8 +13,6 @@ a
 1src/components/SwiperServices/swiper_services.css,e\e\ee10e7f39af517ef173443d24ecb5da93840ce5f
 c
 3src/components/Services.components/services.data.js,a\c\ac50d9f77d00108c327cdcf89a72e69ebb568a5d
-_
-/src/components/SwiperServices/SwiperServices.js,a\0\a056380d5d45890cdc500ee6cba96e61e175c5bf
 ^
 .src/components/Services.components/Services.js,3\f\3f3ce1ba8c01b420aa2020ffe1d4c8ad8a715349
 f
