@@ -30,13 +30,6 @@ function ContactUS() {
       message: message,
     };
 
-    localStorage.setItem("contactForm", JSON.stringify(data));
-
-    //Reset the form
-    setName("");
-    setEmail("");
-    setMessage("");
-
     if (name === "" || email === "" || message === "") {
       Swal.fire({
         title: "Error!",
@@ -44,12 +37,17 @@ function ContactUS() {
         icon: "error",
       });
     } else {
+      localStorage.setItem("contactForm", JSON.stringify(data));
       Swal.fire({
         title: "Success!",
         text: "Your message has been sent",
         icon: "success",
       });
     }
+    //Reset the form
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
