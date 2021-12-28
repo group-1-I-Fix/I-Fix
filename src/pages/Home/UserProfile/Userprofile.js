@@ -70,8 +70,8 @@ function Userprofile({ setUiAvatars, setAvatarURL, avatarURL, uiavatars }) {
   const changeEmailValue = () => {
     let flag = false;
     loggedUser.email = emailInput.current.value;
-    for (let i = 0; i < allUsers.length; i++) {
-      if (loggedUser.email === allUsers[i].email) {
+    for (const item of allUsers) {
+      if (loggedUser.email === item.email) {
         flag = true;
         Swal.fire({
           title: "Email already exists",
