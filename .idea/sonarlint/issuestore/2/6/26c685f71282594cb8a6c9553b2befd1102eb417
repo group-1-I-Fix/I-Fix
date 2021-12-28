@@ -1,0 +1,6 @@
+
+\javascript:S1481";Remove the declaration of the unused 'deleteItem' variable.(ÒºòÊÿÿÿÿÿ
+Yjavascript:S1854"8Remove this useless assignment to variable "deleteItem".(ÒºòÊÿÿÿÿÿ
+Ojavascript:S1117v"3'uiavatars' is already declared in the upper scope.(·µò
+Tjavascript:S1117w"3'avatarURL' is already declared in the upper scope.(½†Şûùÿÿÿÿ
+fjavascript:S3358ñ"DExtract this nested ternary operation into an independent statement.(Úáüõûÿÿÿÿ

@@ -33,3 +33,24 @@ R
 "src/components/Reviews/reviews.css,6\c\6c54375fb99243bda3896918c831089b7c989970
 O
 src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89
+Y
+)src/components/ScrollToTop/ScrollToTop.js,7\1\71f3351b75dd5c3a9350257ee5a6c71520dea0ab
+:
+
+src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
+_
+/src/components/SwiperServices/SwiperServices.js,a\0\a056380d5d45890cdc500ee6cba96e61e175c5bf
+Q
+!src/components/Reviews/Reviews.js,6\d\6d4b081a2206022e3ee45e0d34dbe93d26f6d5bf
+P
+ src/components/Header/header.css,d\a\da8c1bed7635bcb80b5c8e683c564c5968f36000
+c
+3src/components/reservation-form/reservation-form.js,d\8\d816a73c3182f7a34f54b4e3ca670dacf00734ec
+Z
+*src/pages/Home/UserProfile/userprofile.css,5\d\5deac737a75fbd051e59b67ed7f0c496f30847c5
+Z
+*src/components/ScrollToTop/ScrollToTop.css,0\6\060cf4238e4e4b662bdac2f1f58697ec68f48757
+P
+ src/components/Banner/banner.css,5\4\54ea55afff6dd7d3b9a57ed218ca746cc172fec1
+Y
+)src/pages/Home/UserProfile/Userprofile.js,2\6\26c685f71282594cb8a6c9553b2befd1102eb417
