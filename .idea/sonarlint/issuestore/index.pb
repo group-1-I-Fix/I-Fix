@@ -33,3 +33,5 @@ R
 "src/components/Reviews/reviews.css,6\c\6c54375fb99243bda3896918c831089b7c989970
 O
 src/components/Header/Header.js,c\a\caa79197723a9578d728293db3f20893a9c66c89
+Y
+)src/components/ScrollToTop/ScrollToTop.js,7\1\71f3351b75dd5c3a9350257ee5a6c71520dea0ab
